@@ -17,17 +17,23 @@ location:
   country: United Kingdom
   street: ''
   postalCode: 02-703
-  
+
 salary:
   currency: GBP
   from: 60K
   to: 80K
-  
+
+keywords:
+- this
+- is
+- a
+- test
+
 workMethodology:
   agile_management:
     active: true
     description: Scrum
-    
+
   build_server:
     active: true
     description: Travis
@@ -78,11 +84,11 @@ one_on_one:
   architecture_choice: Developers
   convention_choice: Developers
   technolgies_choice: Developers
-work_profile:
-  new_features: 60
+workProfile:
+  newFeatures: 60
   maintenance: 15
-  client_support: 5
-  document_writing: 5
+  clientSupport: 5
+  documentWriting: 5
   meetings: 15
 equipment:
   computer: Laptop

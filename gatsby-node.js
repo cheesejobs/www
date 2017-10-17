@@ -1,11 +1,11 @@
 const Promise = require('bluebird')
 const path = require('path')
+const jobTemplate = path.resolve('./src/templates/job.js')
 
 exports.createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators
 
   return new Promise((resolve, reject) => {
-    const jobTemplate = path.resolve('./src/templates/job.js')
     resolve(
       graphql(
         `

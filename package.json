@@ -29,6 +29,7 @@
     "gatsby-transformer-sharp": "~1.6.10",
     "gatsby-transformer-yaml": "~1.5.11",
     "normalize.css": "~7.0.0",
+    "polished": "^1.8.1",
     "postcss-focus": "~3.0.0"
   },
   "scripts": {

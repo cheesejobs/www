@@ -1,11 +1,14 @@
+import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import React from 'react'
+import { ThemeProvider } from 'styled-components'
+import { Layout } from '../components'
+import theme from '../constants/theme'
 
 import '../styles/main.scss'
 
 const TemplateWrapper = ({ children, data, ...props }) => {
-  const {name} = data.site.siteMetadata
+  const { name } = data.site.siteMetadata
 
   return (
     <div>
@@ -15,9 +18,9 @@ const TemplateWrapper = ({ children, data, ...props }) => {
         <meta name='og:site_name' content={name} />
       </Helmet>
 
-      <div>
-        {children({...props})}
-      </div>
+      <ThemeProvider theme={theme}>
+        <Layout>{children({ ...props })}</Layout>
+      </ThemeProvider>
     </div>
   )
 }
@@ -31,7 +34,7 @@ export const query = graphql`
   query LayoutQuery {
     site {
       siteMetadata {
-        name,
+        name
         twitter
       }
     }

@@ -1,1 +1,144 @@
-@import '~normalize.css';
+html {
+  font-size: 16px;
+}
+
+body {
+  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0.02em;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  -webkit-touch-callout: none;
+  width: 100%;
+  color: #524d4b;
+  background-color: #f8fafc;
+
+  & * {
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 1);
+  }
+
+  & a {
+    color: #524d4b;
+  }
+
+  @media print {
+    background-color: white;
+  }
+}
+
+a,
+abbr,
+address,
+article,
+aside,
+audio,
+b,
+blockquote,
+body,
+caption,
+cite,
+code,
+dd,
+del,
+dfn,
+dialog,
+div,
+dl,
+dt,
+em,
+fieldset,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+hr,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+p,
+pre,
+q,
+samp,
+section,
+small,
+span,
+strong,
+sub,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+ul,
+var,
+video {
+  border: 0;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label,
+p,
+button,
+abbr,
+a,
+span,
+small {
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  text-size-adjust: 100%;
+}
+
+a {
+  -webkit-tap-highlight-color: black;
+  text-decoration: none;
+}
+
+input:not([type='checkbox']):not([type='radio']),
+button {
+  appearance: none;
+  outline: none;
+  -webkit-tap-highlight-color: white;
+  -webkit-touch-callout: none;
+}

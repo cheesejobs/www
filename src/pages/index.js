@@ -1,19 +1,11 @@
 import React from 'react'
+import { JobList } from '../components'
 
-export default ({data, ...props}) => {
+export default ({ data, ...props }) => {
+  console.log(data)
   const jobs = data.allJobsYaml.edges.map(item => item.node)
 
-  return (
-    <div>
-      <p>List of all jobs published</p>
-      <ul>
-        {jobs.map(({path, title}) =>
-          <li key={title}>
-            <a href={`${path}`}>{title}</a>
-          </li>)}
-      </ul>
-    </div>
-  )
+  return <JobList data={jobs} />
 }
 
 export const query = graphql`
