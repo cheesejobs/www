@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import media from '../../helpers/responsive'
+import { responsiveHelper as media } from 'Helpers'
 
 export const HeaderNode = styled.header`
   background-color: white;

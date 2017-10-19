@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 import T from '../../../constants/texts.json'
-import { Icon, List, ListItem, ListText, ListTitle } from '../../../components'
+import { Icon, List, ListItem, ListText, ListTitle } from 'Components'
 import { Section, Title } from '../styled'
 
 const CustomIcon = styled(Icon)`

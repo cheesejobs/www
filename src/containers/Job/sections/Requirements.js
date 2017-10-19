@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import media from '../../../helpers/responsive'
-import { List, ListItem } from '../../../components'
+import { List, ListItem } from 'Components'
 import { Subsection, Section, Subtitle, Title } from '../styled'
 
 const CustomList = List.extend`

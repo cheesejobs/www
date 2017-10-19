@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Box, Button, JobItem } from '../index'
+import { Box, Button, JobItem } from 'Components'
 import { Aside, List, Wrapper } from './styled'
 
-const JobList = ({ jobs, companies }) => (
+const Jobs = ({ jobs, companies }) => (
   <Wrapper>
     <List>
       {jobs.map((job, index) => {
@@ -26,9 +26,9 @@ const JobList = ({ jobs, companies }) => (
   </Wrapper>
 )
 
-JobList.propTypes = {
+Jobs.propTypes = {
   dataSource: PropTypes.arrayOf(PropTypes.object),
   store: PropTypes.arrayOf(PropTypes.object)
 }
 
-export default JobList
+export default Jobs

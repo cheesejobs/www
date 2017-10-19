@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Button } from '../../components'
+import { Box, Button } from 'Components'
 import { Aside, Content, Share, Wrapper } from './styled'
 import * as Sections from './sections'
 

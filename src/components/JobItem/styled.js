@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import media from '../../helpers/responsive'
+import { responsiveHelper as media } from 'Helpers'
 
 export const JobItemNode = styled.li`
   position: relative;

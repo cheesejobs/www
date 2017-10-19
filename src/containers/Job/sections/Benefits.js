@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import media from '../../../helpers/responsive'
 import T from '../../../constants/texts.json'
-import { Icon } from '../../../components'
+import { Icon } from 'Components'
 import { Section, Title } from '../styled'
 
 const PERKS_ICON = {

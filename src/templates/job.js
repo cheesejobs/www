@@ -1,5 +1,5 @@
 import React from 'react'
-import Job from './JobTemplate'
+import { Job } from '../containers'
 
 export default ({ data, pathContext, ...props }) => {
   const job = data.allJobsYaml.edges[0].node

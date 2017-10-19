@@ -1,14 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import {
-  Icon,
-  List,
-  ListItem,
-  ListText,
-  ListTitle,
-  Tooltip
-} from '../../../components'
+import { Icon, List, ListItem, ListText, ListTitle, Tooltip } from 'Components'
 import { Section, Title } from '../styled'
 
 const CustomTitle = ListTitle.extend`

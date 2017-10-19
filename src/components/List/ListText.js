@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import media from '../../helpers/responsive'
+import { responsiveHelper as media } from 'Helpers'
 
 const ListText = styled.div`
   color: ${({ theme }) => theme.colors.textSecondary};

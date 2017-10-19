@@ -1,5 +1,5 @@
 import React from 'react'
-import { JobList } from '../components'
+import { Jobs } from 'Containers'
 
 export default ({ data, ...props }) => {
   const jobs = data.allJobsYaml.edges.map(item => item.node)
@@ -11,7 +11,7 @@ export default ({ data, ...props }) => {
       return acc
     }, {})
 
-  return <JobList jobs={jobs} companies={companies} />
+  return <Jobs jobs={jobs} companies={companies} />
 }
 
 export const query = graphql`

@@ -1,13 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import T from '../../../constants/texts.json'
-import {
-  AmountBar,
-  List,
-  ListItem,
-  ListText,
-  ListTitle
-} from '../../../components'
+import { AmountBar, List, ListItem, ListText, ListTitle } from 'Components'
 import { Section, Title } from '../styled'
 
 const COLORS = {

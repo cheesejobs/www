@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import dateHelper from '../../helpers/date'
+import { dateHelper } from 'Helpers'
 import {
   About,
   Location,

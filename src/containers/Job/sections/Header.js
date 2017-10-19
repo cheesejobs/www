@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import dateHelper from '../../../helpers/date'
-import { Icon } from '../../../components'
+import { dateHelper } from 'Helpers'
+import { Icon } from 'Components'
 import { Section } from '../styled'
 
 const Back = styled(Link)`

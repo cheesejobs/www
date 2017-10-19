@@ -40,3 +40,15 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
     )
   })
 }
+
+exports.modifyWebpackConfig = ({ config, stage }) => {
+  return config.merge({
+    resolve: {
+      alias: {
+        Components: __dirname + '/src/components',
+        Containers: __dirname + '/src/containers',
+        Helpers: __dirname + '/src/helpers'
+      }
+    }
+  })
+}

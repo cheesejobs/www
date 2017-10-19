@@ -8,7 +8,7 @@ import {
   ListItem,
   ListText,
   ListTitle
-} from '../../../components'
+} from 'Components'
 import { Section, Title } from '../styled'
 
 const CustomIcon = styled(Icon)`

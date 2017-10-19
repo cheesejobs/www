@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
-import Button from '../Button'
+import { Button } from 'Components'
 import { HeaderNode, Logo, Nav, Wrapper } from './styled'
 
 const Header = ({ children }) => (
