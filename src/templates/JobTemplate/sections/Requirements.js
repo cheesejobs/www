@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import media from '../../../utils/responsive'
+import media from '../../../helpers/responsive'
 import { List, ListItem } from '../../../components'
 import { Subsection, Section, Subtitle, Title } from '../styled'
 

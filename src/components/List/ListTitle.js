@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import media from '../../utils/responsive'
+import media from '../../helpers/responsive'
 
 const ListTitle = styled.div`
   color: ${({ theme }) => theme.colors.text};

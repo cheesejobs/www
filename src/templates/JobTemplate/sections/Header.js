@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import { ProviderDate } from '../../../providers'
+import dateHelper from '../../../helpers/date'
 import { Icon } from '../../../components'
 import { Section } from '../styled'
 
@@ -61,7 +61,7 @@ const Header = ({ date, position, url, name, description }) => (
       <Back to='/'>
         <Icon value='arrow_left' /> Go back
       </Back>
-      <PublishedDate>{ProviderDate.ago(date)}</PublishedDate>
+      <PublishedDate>{dateHelper.ago(date)}</PublishedDate>
     </Top>
     <Position>{position}</Position>
     <Company>

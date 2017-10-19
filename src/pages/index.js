@@ -2,9 +2,7 @@ import React from 'react'
 import { JobList } from '../components'
 
 export default ({ data, ...props }) => {
-  console.log(data)
   const jobs = data.allJobsYaml.edges.map(item => item.node)
-
   return <JobList data={jobs} />
 }
 

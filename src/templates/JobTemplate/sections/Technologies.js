@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import media from '../../../utils/responsive'
+import media from '../../../helpers/responsive'
 import { Icon } from '../../../components'
 import { Section, Title } from '../styled'
 

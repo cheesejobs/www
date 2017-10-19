@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { ProviderDate } from '../../providers'
+import dateHelper from '../../helpers/date'
 import {
   About,
   Location,
@@ -16,7 +16,7 @@ const JobListItem = (props = {}) => {
   const { id, date, company, location, path, title } = props
   const { country, city } = location || {}
   const { name, about, logo } = company || {}
-  const isNew = ProviderDate.inLast24Hours(date)
+  const isNew = dateHelper.inLast24Hours(date)
 
   return (
     <JobItemNode>
@@ -25,7 +25,7 @@ const JobListItem = (props = {}) => {
         <Location>
           {city}, {country}
         </Location>
-        <PublishedDate>{ProviderDate.ago(date)}</PublishedDate>
+        <PublishedDate>{dateHelper.ago(date)}</PublishedDate>
       </Header>
       <Position to={path}>
         {isNew && <New>NEW</New>}

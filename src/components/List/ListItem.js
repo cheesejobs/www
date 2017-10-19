@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import media from '../../utils/responsive'
+import media from '../../helpers/responsive'
 
 const ListItem = styled.li`
   display: flex;
