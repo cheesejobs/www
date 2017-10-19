@@ -9,7 +9,7 @@ const Footer = styled.footer`
   text-align: center;
 
   & > a {
-    color: ${({ theme }) => theme.colors.primary};
+    color: ${({ theme }) => theme.colors.accent};
   }
 `
 

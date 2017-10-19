@@ -12,7 +12,7 @@ const CustomIcon = styled(Icon)`
   ${props =>
     props.value === 'check' &&
     css`
-      color: ${({ theme }) => theme.colors.primary};
+      color: ${({ theme }) => theme.colors.accent};
     `};
 `
 

@@ -11,10 +11,10 @@ import {
 import { Section, Title } from '../styled'
 
 const COLORS = {
-  new_features: '#FFCE56',
+  newFeatures: '#FFCE56',
   maintenance: '#FF6384',
-  client_support: '#36A2EB',
-  document_writing: '#4BC0C0',
+  clientSupport: '#36A2EB',
+  documentWriting: '#4BC0C0',
   meetings: '#A593E0'
 }
 

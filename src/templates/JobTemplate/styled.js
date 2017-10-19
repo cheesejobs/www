@@ -56,7 +56,7 @@ export const Subtitle = styled.h4`
 export const Share = styled.nav`
   & > a {
     display: block;
-    color: ${({ theme }) => theme.colors.textTitle};
+    color: ${({ theme }) => theme.colors.accent};
   }
 `
 

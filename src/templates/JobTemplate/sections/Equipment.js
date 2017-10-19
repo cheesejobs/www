@@ -12,7 +12,7 @@ const OsIcon = styled(Icon)`
   ${({ active, theme }) =>
     active &&
     css`
-      background-color: ${theme.colors.primary};
+      background-color: ${theme.colors.accent};
     `};
 `
 

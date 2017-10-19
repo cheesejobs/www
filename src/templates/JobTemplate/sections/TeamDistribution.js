@@ -8,7 +8,7 @@ import { Section, Title } from '../styled'
 const People = styled.p`
   margin-bottom: 0.5rem;
   font-size: 2rem;
-  color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.accent};
   font-weight: 300;
 `
 

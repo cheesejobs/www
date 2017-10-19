@@ -27,7 +27,7 @@ AmountBar.propTypes = {
 
 AmountBar.defaultProps = {
   amount: 75,
-  color: theme.colors.primary,
+  color: theme.colors.accent,
   offset: 0
 }
 

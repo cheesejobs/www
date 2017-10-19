@@ -8,7 +8,7 @@ import { Section } from '../styled'
 
 const Back = styled(Link)`
   font-size: 0.8rem;
-  color: ${({ theme }) => theme.colors.textSecondary};
+  color: ${({ theme }) => theme.colors.accent};
   display: flex;
   align-items: center;
   text-transform: uppercase;

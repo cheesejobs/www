@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    name: 'cheesejobs',
-    twitter: '@cheesejobs',
+    name: 'nosuitjobs',
+    twitter: '@nosuitjobs',
     description: 'Your IT jobs boards'
   },
   plugins: [

@@ -9,7 +9,7 @@ const JobList = ({ data }) => (
 
     <Aside>
       <Box
-        title='Why Cheesejobs works?'
+        title='Why nosuitjobs works?'
         text='We have a growing community of 200,000 designers, developers and technology professionals using Panda to keep them up to date. It’s a place where companies and talent connect.'
       >
         <Button>Post a job starting at 200$</Button>

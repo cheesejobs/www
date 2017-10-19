@@ -8,10 +8,11 @@ const Button = styled.button`
   border: none;
   outline: 0;
   padding: 0 1rem;
+  text-transform: uppercase;
+  border-radius: 4px;
   font-weight: bold;
-  border-radius: 2px;
   background-color: ${({ theme }) => theme.colors.primary};
-  font-size: 0.8rem;
+  letter-spacing: 1px;
   line-height: 2rem;
   color: white;
 

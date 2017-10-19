@@ -70,7 +70,7 @@ export const PublishedDate = styled.span`
 export const Position = styled(Link)`
   font-size: 1rem;
   margin: 1rem 0 0.5rem;
-  color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.accent};
   display: flex;
   align-items: center;
 

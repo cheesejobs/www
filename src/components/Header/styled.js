@@ -27,7 +27,7 @@ export const Wrapper = styled.div`
 `
 
 export const Logo = styled.img`
-  height: calc(6rem / 4);
+  height: calc(6rem / 2.5);
 
   ${media.phone`
     margin-bottom: 1.5rem;
