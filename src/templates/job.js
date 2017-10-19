@@ -3,7 +3,6 @@ import Job from './JobTemplate'
 
 export default ({ data, pathContext, ...props }) => {
   const job = data.allJobsYaml.edges[0].node
-
   return <Job data={job} />
 }
 

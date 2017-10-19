@@ -3,7 +3,7 @@ path: "/facebook-javascript-developer"
 date: "2015-05-01T22:12:03.284Z"
 team: frontend
 teamSize: 7
-companyId: Facebook
+companyId: facebook
 description: |-
   Algolia is a perfect fit for structured data and we expect our users to send us their data via our REST API. While this works in many cases, there are a lot situations where our users cannot send us their data via an API call (example: static websites). We also find ourselves frequently creating small crawling scripts or custom solutions like DocSearch. We believe there's a better way to tackle all those missing opportunities.
 

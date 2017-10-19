@@ -1,11 +1,17 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { Box, Button, JobItem } from '../index'
 import { Aside, List, Wrapper } from './styled'
 
-const JobList = ({ data }) => (
+const JobList = ({ jobs, companies }) => (
   <Wrapper>
-    <List>{data.map(job => <JobItem key={job.id} {...job} />)}</List>
+    <List>
+      {jobs.map((job, index) => {
+        const { companyId, ...props } = job
+        const company = companies[companyId]
+        return <JobItem key={props.date} company={company} {...props} />
+      })}
+    </List>
 
     <Aside>
       <Box
