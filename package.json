@@ -57,6 +57,9 @@
       "git add"
     ]
   },
+  "engines": {
+    "node": ">= 8"
+  },
   "standard": {
     "globals": [
       "React",
