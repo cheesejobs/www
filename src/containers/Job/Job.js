@@ -10,7 +10,6 @@ const Job = ({ data }) => {
     equipment,
     essentials,
     workProfile,
-    one_on_one,
     benefits,
     location,
     position,
@@ -39,7 +38,6 @@ const Job = ({ data }) => {
         <Sections.TeamDistribution data={teamDistribution} />
         <Sections.WorkMethodology data={workMethodology} />
         <Sections.Specs {...specs} />
-        <Sections.OneOnOne {...one_on_one} />
         <Sections.WorkProfile data={workProfile} />
         <Sections.Equipment {...equipment} />
         <Sections.Technologies data={technologies} />

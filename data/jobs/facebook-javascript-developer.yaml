@@ -72,12 +72,6 @@ specs:
   working_hours: Flexible working hours
   workload: 100
   workweek: 40
-one_on_one:
-  project_change: false
-  regular_evaluation: false
-  architecture_choice: Developers
-  convention_choice: Developers
-  technolgies_choice: Developers
 workProfile:
   newFeatures: 60
   maintenance: 15
