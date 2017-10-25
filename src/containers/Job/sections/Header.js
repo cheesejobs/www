@@ -85,7 +85,7 @@ const Header = ({
     <Company>
       <Link to={company.url}>{company.name}</Link>
     </Company>
-    {Object.keys(description).map(title =>
+    {['what', 'why', 'other'].map(title =>
       renderDescription(T.description[title], description[title], company.name)
     )}
   </Section>
