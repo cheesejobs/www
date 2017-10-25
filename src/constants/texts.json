@@ -19,10 +19,10 @@
   "pair_programming": "Pair Programming",
   "testers": "Tester(s)",
 
-  "new_features": "New Features",
+  "newFeatures": "New Features",
   "maintenance": "Maintenance / Bug Fixing",
-  "client_support": "Client Support",
-  "document_writing": "Document Writing",
+  "clientSupport": "Client Support",
+  "documentWriting": "Document Writing",
   "meetings": "Meetings",
 
   "BikeParking": "Bike parking",
