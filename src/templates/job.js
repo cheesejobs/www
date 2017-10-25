@@ -36,7 +36,11 @@ export const pageQuery = graphql`
             TrainingBudget
           }
           date
-          description
+          description {
+            other
+            what
+            why
+          }
           equipment {
             computer
             monitors

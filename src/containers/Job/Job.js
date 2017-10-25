@@ -5,35 +5,24 @@ import * as Sections from './sections'
 
 const Job = ({ data }) => {
   const {
-    company = { name: 'Facebook', url: 'http://facebook.com' }, // TODO: Use graphql
-    date,
     equipment,
     essentials,
     workProfile,
     benefits,
     location,
-    position,
     recruitingSteps,
     requirements,
     salary,
     specs,
     teamDistribution,
     technologies,
-    workMethodology,
-    description
+    workMethodology
   } = data
-  console.log(data)
+
   return (
     <Wrapper>
       <Content>
-        <Sections.Header
-          description={description}
-          date={date}
-          name={company.name}
-          position={position}
-          url={company.url}
-        />
-
+        <Sections.Header {...data} />
         <Sections.About salary={salary} location={location} />
         <Sections.TeamDistribution data={teamDistribution} />
         <Sections.WorkMethodology data={workMethodology} />

@@ -1,4 +1,9 @@
 {
+  "description": {
+    "what": "What is %s?",
+    "why": "What are we looking for?",
+    "other": "Other"
+  },
   "agile_management": "Agile management",
   "build_server": "Build Server",
   "code_reviews": "Code Reviews",

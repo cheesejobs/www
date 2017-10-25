@@ -36,7 +36,6 @@ export const query = graphql`
           companyId
           title
           path
-          description
           location {
             city
             country

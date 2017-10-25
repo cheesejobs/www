@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import { dateHelper } from 'Helpers'
 import { Icon } from 'Components'
 import { Section } from '../styled'
+import T from '../../../constants/texts.json'
 
 const Back = styled(Link)`
   font-size: 0.8rem;
@@ -48,14 +49,31 @@ const Company = styled.div`
   }
 `
 
-const Paraph = styled.p`
+const DescriptionTitle = styled.h3`
+  font-size: 1rem;
+  margin: 1rem 0 0.5rem;
+`
+
+const DescriptionText = styled.p`
   margin-bottom: 2rem;
   line-height: 26px;
   font-size: 15px;
   color: ${({ theme }) => theme.colors.textPrimary};
 `
 
-const Header = ({ date, position, url, name, description }) => (
+const renderDescription = (title, text, companyName) => (
+  <div key={title}>
+    <DescriptionTitle>{title.replace('%s', companyName)}</DescriptionTitle>
+    <DescriptionText>{text}</DescriptionText>
+  </div>
+)
+
+const Header = ({
+  company = { name: 'Facebook', url: 'http://facebook.com' },
+  date,
+  title,
+  description
+}) => (
   <Section>
     <Top>
       <Back to='/'>
@@ -63,23 +81,21 @@ const Header = ({ date, position, url, name, description }) => (
       </Back>
       <PublishedDate>{dateHelper.ago(date)}</PublishedDate>
     </Top>
-    <Position>{position}</Position>
+    <Position>{title}</Position>
     <Company>
-      <Link to={url}>{name}</Link>
+      <Link to={company.url}>{company.name}</Link>
     </Company>
-    <div>
-      {description
-        .split('\n\n')
-        .map(paraph => <Paraph key={paraph}>{paraph}</Paraph>)}
-    </div>
+    {Object.keys(description).map(title =>
+      renderDescription(T.description[title], description[title], company.name)
+    )}
   </Section>
 )
 
 Header.propTypes = {
   date: PropTypes.string,
-  description: PropTypes.string,
+  description: PropTypes.object,
   name: PropTypes.string,
-  position: PropTypes.string,
+  title: PropTypes.string,
   url: PropTypes.string
 }
 
