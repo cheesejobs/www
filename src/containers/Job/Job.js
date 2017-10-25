@@ -13,7 +13,6 @@ const Job = ({ data }) => {
     one_on_one,
     benefits,
     location,
-    keywords,
     position,
     recruitingSteps,
     requirements,
@@ -36,12 +35,7 @@ const Job = ({ data }) => {
           url={company.url}
         />
 
-        <Sections.About
-          salary={salary}
-          location={location}
-          keywords={keywords}
-        />
-
+        <Sections.About salary={salary} location={location} />
         <Sections.TeamDistribution data={teamDistribution} />
         <Sections.WorkMethodology data={workMethodology} />
         <Sections.Specs {...specs} />

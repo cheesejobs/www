@@ -28,7 +28,7 @@ const currencySymbols = {
   Dollar: 'dollar'
 }
 
-const About = ({ location, salary, company_size, keywords }) => {
+const About = ({ location, salary, company_size }) => {
   const currencySymbol = currencySymbols[salary.currency]
 
   return (
@@ -61,21 +61,6 @@ const About = ({ location, salary, company_size, keywords }) => {
           </ListText>
         </ListItem>
         <ListItem>
-          <CustomTitle>Sector</CustomTitle>
-          <ListText>
-            <CustomIcon value='tags' />
-            {keywords.map((keyword, index) => {
-              const trailling = index !== keywords.length - 1 ? ', ' : ''
-              return (
-                <Tag key={keyword}>
-                  {keyword}
-                  {trailling}
-                </Tag>
-              )
-            })}
-          </ListText>
-        </ListItem>
-        <ListItem>
           <CustomTitle>Company size</CustomTitle>
           <ListText>
             <CustomIcon value={getIconSize(company_size)} />
@@ -89,7 +74,6 @@ const About = ({ location, salary, company_size, keywords }) => {
 
 About.propTypes = {
   company_size: PropTypes.string,
-  keywords: PropTypes.arrayOf(PropTypes.string),
   location: PropTypes.shape({
     city: PropTypes.string,
     country: PropTypes.string,

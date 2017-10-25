@@ -46,7 +46,6 @@ export const pageQuery = graphql`
               linux
             }
           }
-          keywords
           title
           location {
             city

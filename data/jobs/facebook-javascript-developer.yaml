@@ -23,12 +23,6 @@ salary:
   from: 60K
   to: 80K
 
-keywords:
-- this
-- is
-- a
-- test
-
 workMethodology:
   agile_management:
     active: true
