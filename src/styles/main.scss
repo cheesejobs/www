@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'Inter UI';
+  src: url('/fonts/myfont.woff2') format('woff2'),
+       url('/fonts/myfont.woff') format('woff')
+}
+
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -9,7 +15,7 @@ html {
 
 body {
   font-size: 1rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter UI', sans-serif;
   letter-spacing: 0.02em;
   height: 100%;
   margin: 0;
