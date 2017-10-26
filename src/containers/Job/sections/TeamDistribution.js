@@ -56,10 +56,10 @@ const TeamDistribution = ({ data }) => (
   <Section>
     <Title>Team Distribution</Title>
     <TeamList>
-      {Object.keys(data).map(team => (
-        <Team key={team}>
-          <People>{data[team]}</People>
-          {T[team]}
+      {data.map(({ id, value }) => (
+        <Team key={id}>
+          <People>{value}</People>
+          {T[id]}
         </Team>
       ))}
     </TeamList>

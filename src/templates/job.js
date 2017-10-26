@@ -62,11 +62,8 @@ export const pageQuery = graphql`
             to
           }
           teamDistribution {
-            frontend
-            backend
-            devops
-            sales
-            design
+            id
+            value
           }
           technologies {
             rank

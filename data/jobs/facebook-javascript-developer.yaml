@@ -81,6 +81,56 @@ benefits:
     icon: equity
     description:
 
+teamDistribution:
+  - id: frontend
+    value: 10
+  - id: backend
+    value: 8
+  - id: devops
+    value: 9
+  - id: sales
+    value: 12
+  - id: design
+    value: 5
+
+requirements:
+  responsabilities:
+  - Contribute to the crawler Node.js code along with designers and product managers.
+  - Build a state of the art, scalable & robust API controlling this crawler.
+  - Build a top-of-the-class admin and user UI.
+  - Integrate APIs like Google Analytics, both 3rd party and internal.
+  - Communicate with users and understand their pain points.
+  requeriments:
+  - 2+ years of programming experience, preferably with JavaScript and Node.js.
+  - Ability to write code in ES2015/6/7.
+  - Rigor in high code quality, automated testing, and other engineering best practices.
+  - How to handle security, logs, errors, metrics, tests (unit, functional) in a Node.js
+    application.
+  - Great oral and written communication in English.
+  nices:
+  - Experience with message brokers like RabbitMQ.
+  - Experience with Cheerio or any DOM parsing library.
+  - Experience with chrome headless, remote debugging protocol.
+  - Experience with docker.
+  - Experience with Jest, Yarn.
+
+recruitingSteps:
+  - title: First Contact
+    description: We will contact with you for a online session, just for meeting.
+    time: 15 days
+  - title: Code challenge
+    description: We will send to you a code challenge designed for your future work
+      mates.
+    time: 15 days
+  - title: Team meeting
+    description: After your coding challenge, we contact with your for meet the rest
+      of the team. We pay you the travel expenses.
+    time: 15 days
+  - title: Your first day
+    description: Congrulations, you will be part of the amazing Facebook team!
+
+# -- TO REVEIEW
+
 location:
   city: London
   country: United Kingdom
@@ -179,45 +229,3 @@ technologies:
   name: handlebars
 - rank: 0
   name: jasmine
-
-requirements:
-  responsabilities:
-  - Contribute to the crawler Node.js code along with designers and product managers.
-  - Build a state of the art, scalable & robust API controlling this crawler.
-  - Build a top-of-the-class admin and user UI.
-  - Integrate APIs like Google Analytics, both 3rd party and internal.
-  - Communicate with users and understand their pain points.
-  requeriments:
-  - 2+ years of programming experience, preferably with JavaScript and Node.js.
-  - Ability to write code in ES2015/6/7.
-  - Rigor in high code quality, automated testing, and other engineering best practices.
-  - How to handle security, logs, errors, metrics, tests (unit, functional) in a Node.js
-    application.
-  - Great oral and written communication in English.
-  nices:
-  - Experience with message brokers like RabbitMQ.
-  - Experience with Cheerio or any DOM parsing library.
-  - Experience with chrome headless, remote debugging protocol.
-  - Experience with docker.
-  - Experience with Jest, Yarn.
-recruitingSteps:
-- title: First Contact
-  description: We will contact with you for a online session, just for meeting.
-  time: 15 days
-- title: Code challenge
-  description: We will send to you a code challenge designed for your future work
-    mates.
-  time: 15 days
-- title: Team meeting
-  description: After your coding challenge, we contact with your for meet the rest
-    of the team. We pay you the travel expenses.
-  time: 15 days
-- title: Your first day
-  description: Congrulations, you will be part of the amazing Facebook team!
-
-teamDistribution:
-  frontend: 10
-  backend: 8
-  devops: 9
-  sales: 12
-  design: 5
