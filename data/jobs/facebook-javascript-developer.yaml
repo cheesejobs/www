@@ -13,6 +13,74 @@ description:
   other: |-
     Are you a resilient problem solver who isn't afraid to think outside the box and get their hands dirty? We expect you to take ownership and be able to execute without defined processes and implicit direction. We're looking for candidates who raise the level of our teams.
 
+benefits:
+  - id: BikeParking
+    icon: bike
+    description: Comminuty parking
+  - id: ConferenceBudget
+    icon: conference
+    description: Only if giving talks
+  - id: FreeBeverages
+    icon: beverage
+    description: <3
+  - id: FreeCoffee
+    icon: coffee
+    description: <3
+  - id: FreeSnacks
+    icon: food
+    description: <3
+  - id: InHouseHackDays
+    icon: computer
+    description: Every Friday
+  - id: InHouseTrainings
+    icon: home
+    description: Once a month
+  - id: Kitchen
+    icon: kitchen
+    description:
+  - id: MobilePhone
+    icon: mobile
+    description:
+  - id: PlayRoom
+    icon: games
+    description:
+  - id: PrivateHealthCare
+    icon: health
+    description:
+  - id: Shower
+    icon: shower
+    description:
+  - id: GymSubscription
+    icon: gym
+    description:
+  - id: TeamEvents
+    icon: group
+    description:
+  - id: TrainingBudget
+    icon: university
+    description:
+  - id: MaternityLeave
+    icon: baby
+    description:
+  - id: Childcare
+    icon: childcare
+    description:
+  - id: PerformanceBonus
+    icon: improvement
+    description:
+  - id: DiversityProgram
+    icon: diversity
+    description:
+  - id: PensionPlan
+    icon: pension
+    description:
+  - id: SickLeave
+    icon: medicine
+    description:
+  - id: StockOptions
+    icon: equity
+    description:
+
 location:
   city: London
   country: United Kingdom
@@ -111,22 +179,7 @@ technologies:
   name: handlebars
 - rank: 0
   name: jasmine
-benefits:
-  BikeParking: true
-  ConferenceBudget: true
-  FreeBeverages: true
-  FreeCoffee: true
-  FreeSnacks: true
-  InHouseHackDays: false
-  InHouseTrainings: true
-  Kitchen: true
-  MobilePhone: false
-  PlayRoom: true
-  PrivateHealthCare: true
-  Shower: true
-  GymSubscription: false
-  TeamEvents: true
-  TrainingBudget: true
+
 requirements:
   responsabilities:
   - Contribute to the crawler Node.js code along with designers and product managers.

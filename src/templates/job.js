@@ -19,21 +19,9 @@ export const pageQuery = graphql`
       edges {
         node {
           benefits {
-            BikeParking
-            ConferenceBudget
-            FreeBeverages
-            FreeCoffee
-            FreeSnacks
-            InHouseHackDays
-            InHouseTrainings
-            Kitchen
-            MobilePhone
-            PlayRoom
-            PrivateHealthCare
-            Shower
-            GymSubscription
-            TeamEvents
-            TrainingBudget
+            description
+            icon
+            id
           }
           date
           description {
