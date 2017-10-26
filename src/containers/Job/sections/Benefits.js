@@ -6,24 +6,6 @@ import T from '../../../constants/texts.json'
 import { Icon } from 'Components'
 import { Section, Title } from '../styled'
 
-const PERKS_ICON = {
-  BikeParking: 'bike',
-  ConferenceBudget: 'conference',
-  FreeBeverages: 'beverage',
-  FreeCoffee: 'coffee',
-  FreeSnacks: 'food',
-  InHouseHackDays: 'computer',
-  InHouseTrainings: 'home',
-  Kitchen: 'kitchen',
-  MobilePhone: 'mobile',
-  PlayRoom: 'games',
-  PrivateHealthCare: 'health',
-  Shower: 'shower',
-  GymSubscription: 'gym',
-  TeamEvents: 'group',
-  TrainingBudget: 'university'
-}
-
 const ItemIcon = styled(Icon)`
   width: 1.5rem;
   height: 1.5rem;
@@ -58,42 +40,22 @@ const Item = styled.li`
   `};
 `
 
-const Additional = ({ data }) => (
+const Benefits = ({ data }) => (
   <Section>
     <Title>Benefits</Title>
     <List>
-      {Object.keys(data).map(item => {
-        if (!data[item]) return null
-
-        return (
-          <Item key={item}>
-            <ItemIcon value={PERKS_ICON[item]} />
-            {T[item]}
-          </Item>
-        )
-      })}
+      {data.map(({ description, icon, id }) => (
+        <Item key={id}>
+          <ItemIcon value={icon} />
+          {T.benefits[id]}
+        </Item>
+      ))}
     </List>
   </Section>
 )
 
-Additional.propTypes = {
-  data: PropTypes.shape({
-    BikeParking: PropTypes.bool,
-    ConferenceBudget: PropTypes.bool,
-    FreeBeverages: PropTypes.bool,
-    FreeCoffee: PropTypes.bool,
-    FreeSnacks: PropTypes.bool,
-    InHouseHackDays: PropTypes.bool,
-    InHouseTrainings: PropTypes.bool,
-    Kitchen: PropTypes.bool,
-    MobilePhone: PropTypes.bool,
-    PlayRoom: PropTypes.bool,
-    PrivateHealthCare: PropTypes.bool,
-    Shower: PropTypes.bool,
-    GymSubscription: PropTypes.bool,
-    TeamEvents: PropTypes.bool,
-    TrainingBudget: PropTypes.bool
-  })
+Benefits.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.object)
 }
 
-export default Additional
+export default Benefits
