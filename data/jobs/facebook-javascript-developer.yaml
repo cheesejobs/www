@@ -60,25 +60,25 @@ benefits:
     icon: university
     description:
   - id: MaternityLeave
-    icon: university
+    icon: baby
     description:
   - id: Childcare
-    icon: university
+    icon: childcare
     description:
   - id: PerformanceBonus
-    icon: university
+    icon: improvement
     description:
   - id: DiversityProgram
-    icon: university
+    icon: diversity
     description:
   - id: PensionPlan
-    icon: university
+    icon: pension
     description:
   - id: SickLeave
-    icon: university
+    icon: medicine
     description:
   - id: StockOptions
-    icon: university
+    icon: equity
     description:
 
 location:
