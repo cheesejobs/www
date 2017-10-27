@@ -6,13 +6,10 @@ import * as Sections from './sections'
 const Job = ({ data }) => {
   const {
     equipment,
-    essentials,
     workProfile,
     benefits,
-    location,
     recruitingSteps,
     requirements,
-    salary,
     specs,
     teamDistribution,
     technologies,
@@ -23,16 +20,15 @@ const Job = ({ data }) => {
     <Wrapper>
       <Content>
         <Sections.Header {...data} />
-        <Sections.About salary={salary} location={location} />
-        <Sections.TeamDistribution data={teamDistribution} />
-        <Sections.WorkMethodology data={workMethodology} />
-        <Sections.Specs {...specs} />
-        <Sections.WorkProfile data={workProfile} />
-        <Sections.Equipment {...equipment} />
-        <Sections.Technologies data={technologies} />
-        <Sections.Benefits data={benefits} />
+        <Sections.Specs data={specs} />
         <Sections.Requirements data={requirements} />
+        <Sections.WorkMethodology data={workMethodology} />
+        <Sections.Benefits data={benefits} />
+        <Sections.WorkProfile data={workProfile} />
         <Sections.Recruiting steps={recruitingSteps} />
+        <Sections.Technologies data={technologies} />
+        <Sections.Equipment {...equipment} />
+        <Sections.TeamDistribution data={teamDistribution} />
       </Content>
 
       <Aside>

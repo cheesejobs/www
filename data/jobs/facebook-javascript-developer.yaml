@@ -171,33 +171,13 @@ technologies:
   - handlebars
   - jasmine
 
-# -- TO REVEIEW
-
-location:
-  city: London
-  country: United Kingdom
-  street: ''
-  postalCode: 02-703
-
-salary:
-  currency: GBP
-  from: 60K
-  to: 80K
-
-specs:
-  holiday: 20 days
-  relocation: false
-  remote: 15
-  travel: 10
-  working_hours: Flexible working hours
-  workload: 100
-  workweek: 40
 workProfile:
   newFeatures: 60
   maintenance: 15
   clientSupport: 5
   documentWriting: 5
   meetings: 15
+
 equipment:
   computer: Laptop
   monitors: 27"
@@ -205,3 +185,17 @@ equipment:
     apple: true
     windows: false
     linux: true
+
+specs:
+  - id: location
+    description: London, United Kingdom
+  - id: salary
+    description: 60K - 80K GBP
+  - id: holidayPolitic
+    description: 24 days + sick days + move days
+  - id: remote
+    description: Yes
+  - id: remoteLocation
+    description: Anywhere in the world
+  - id: flexibleHours
+    description: Yes

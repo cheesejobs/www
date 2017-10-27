@@ -1,4 +1,3 @@
-export { default as About } from './About'
 export { default as Benefits } from './Benefits'
 export { default as Equipment } from './Equipment'
 export { default as Header } from './Header'

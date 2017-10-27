@@ -46,6 +46,16 @@
     "pairProgramming" : "Do you encourage pair programming?"
   },
 
+  "specs": {
+    "location": "Location",
+    "salary": "Salary",
+    "holidayPolitic": "Holidays Politic",
+    "remote": "Remote work allowed?",
+    "remoteLocation": "Where can you work from?",
+    "flexibleHours": "Flexible hours?",
+    "relocation": "Do you offer relocation package?"
+  },
+
   "newFeatures": "New Features",
   "maintenance": "Maintenance / Bug Fixing",
   "clientSupport": "Client Support",

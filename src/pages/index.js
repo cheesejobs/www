@@ -36,14 +36,9 @@ export const query = graphql`
           companyId
           title
           path
-          location {
-            city
-            country
-          }
-          salary {
-            currency
-            from
-            to
+          specs {
+            id
+            description
           }
         }
       }

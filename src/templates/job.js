@@ -39,12 +39,6 @@ export const pageQuery = graphql`
             }
           }
           title
-          location {
-            city
-            country
-            street
-            postalCode
-          }
           path
           recruitingSteps {
             title
@@ -56,10 +50,9 @@ export const pageQuery = graphql`
             requeriments
             nices
           }
-          salary {
-            currency
-            from
-            to
+          specs {
+            description
+            id
           }
           teamDistribution {
             id

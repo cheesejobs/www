@@ -13,8 +13,8 @@ import {
 } from './styled'
 
 const JobListItem = props => {
-  const { date, company, location, path, title } = props
-  const { country, city } = location
+  const { date, company, path, specs, title } = props
+  const location = specs.find(item => item.id === 'location').description
   const { name, about, logo } = company
   const isNew = dateHelper.inLast24Hours(date)
 
@@ -22,9 +22,7 @@ const JobListItem = props => {
     <JobItemNode>
       <Header>
         {logo && <Logo src={logo} alt={name} />}
-        <Location>
-          {city}, {country}
-        </Location>
+        <Location>{location}</Location>
         <PublishedDate>{dateHelper.ago(date)}</PublishedDate>
       </Header>
       <Position to={path}>
@@ -43,7 +41,6 @@ JobListItem.propTypes = {
     about: PropTypes.string,
     logo: PropTypes.string
   }),
-  country: PropTypes.string,
   date: PropTypes.number,
   id: PropTypes.number,
   title: PropTypes.string
