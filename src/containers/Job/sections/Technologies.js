@@ -56,7 +56,7 @@ const Technologies = ({ data }) => (
   <Section>
     <Title>Technologies</Title>
     <TechList>
-      {data.map(({ name }) => (
+      {data.map(name => (
         <TechItem key={name}>
           <TechIcon value={name} />
           {name}

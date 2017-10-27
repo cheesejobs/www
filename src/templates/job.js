@@ -65,10 +65,7 @@ export const pageQuery = graphql`
             id
             value
           }
-          technologies {
-            rank
-            name
-          }
+          technologies
           workMethodology {
             id
             value

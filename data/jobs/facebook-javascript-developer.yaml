@@ -157,6 +157,20 @@ workMethodology:
   - id: pairProgramming
     value: false
 
+technologies:
+  - javascript
+  - webpack
+  - travis
+  - php
+  - swift
+  - babel
+  - backbonejs
+  - d3js
+  - git
+  - grunt
+  - handlebars
+  - jasmine
+
 # -- TO REVEIEW
 
 location:
@@ -191,28 +205,3 @@ equipment:
     apple: true
     windows: false
     linux: true
-technologies:
-- rank: 3
-  name: javascript
-- rank: 3
-  name: webpack
-- rank: 1
-  name: travis
-- rank: 0
-  name: php
-- rank: 3
-  name: swift
-- rank: 3
-  name: babel
-- rank: 1
-  name: backbonejs
-- rank: 0
-  name: d3js
-- rank: 3
-  name: git
-- rank: 3
-  name: grunt
-- rank: 1
-  name: handlebars
-- rank: 0
-  name: jasmine
