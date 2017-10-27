@@ -129,6 +129,34 @@ recruitingSteps:
   - title: Your first day
     description: Congrulations, you will be part of the amazing Facebook team!
 
+workMethodology:
+  - id: dailyBuilds
+    value: true
+  - id: codeReview
+    value: true
+  - id: codeInInterview
+    value: true
+  - id: commitFirstDay
+    value: false
+  - id: bestTools
+    value: true
+  - id: qualityAssurance
+    value: false
+  - id: workConditions
+    value: true
+  - id: sourceControl
+    value: true
+  - id: issueTracker
+    value: true
+  - id: oneStepBuild
+    value: true
+  - id: bugsBeforeCode
+    value: true
+  - id: projectUp2h
+    value: false
+  - id: pairProgramming
+    value: false
+
 # -- TO REVEIEW
 
 location:
@@ -142,47 +170,6 @@ salary:
   from: 60K
   to: 80K
 
-workMethodology:
-  agile_management:
-    active: true
-    description: Scrum
-
-  build_server:
-    active: true
-    description: Travis
-  code_reviews:
-    active: true
-    description: ''
-  commit_first_day:
-    active: false
-    description: ''
-  tools_freedom:
-    active: true
-    description: ''
-  integration_tests:
-    active: true
-    description: Cypress.io
-  pair_programming:
-    active: true
-    description: ''
-  issue_tracking:
-    active: true
-    description: GitHub
-  one_command_build:
-    active: true
-    description: NPM
-  statis_code_analyzer:
-    active: true
-    description: ESLint
-  unit_tests:
-    active: true
-    description: Jest
-  testers:
-    active: false
-    description: ''
-  up_and_running_2h:
-    active: true
-    description: Vagrant provided
 specs:
   holiday: 20 days
   relocation: false

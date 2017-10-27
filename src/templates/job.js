@@ -70,58 +70,8 @@ export const pageQuery = graphql`
             name
           }
           workMethodology {
-            agile_management {
-              active
-              description
-            }
-            build_server {
-              active
-              description
-            }
-            code_reviews {
-              active
-              description
-            }
-            commit_first_day {
-              active
-              description
-            }
-            tools_freedom {
-              active
-              description
-            }
-            integration_tests {
-              active
-              description
-            }
-            pair_programming {
-              active
-              description
-            }
-            issue_tracking {
-              active
-              description
-            }
-            one_command_build {
-              active
-              description
-            }
-            statis_code_analyzer {
-              active
-              description
-            }
-            unit_tests {
-              active
-              description
-            }
-            testers {
-              active
-              description
-            }
-            up_and_running_2h {
-              active
-              description
-            }
+            id
+            value
           }
           workProfile {
             newFeatures
