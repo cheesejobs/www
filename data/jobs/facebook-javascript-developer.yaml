@@ -94,25 +94,30 @@ teamDistribution:
     value: 5
 
 requirements:
-  responsabilities:
-  - Contribute to the crawler Node.js code along with designers and product managers.
-  - Build a state of the art, scalable & robust API controlling this crawler.
-  - Build a top-of-the-class admin and user UI.
-  - Integrate APIs like Google Analytics, both 3rd party and internal.
-  - Communicate with users and understand their pain points.
-  requeriments:
-  - 2+ years of programming experience, preferably with JavaScript and Node.js.
-  - Ability to write code in ES2015/6/7.
-  - Rigor in high code quality, automated testing, and other engineering best practices.
-  - How to handle security, logs, errors, metrics, tests (unit, functional) in a Node.js
-    application.
-  - Great oral and written communication in English.
-  nices:
-  - Experience with message brokers like RabbitMQ.
-  - Experience with Cheerio or any DOM parsing library.
-  - Experience with chrome headless, remote debugging protocol.
-  - Experience with docker.
-  - Experience with Jest, Yarn.
+  - name: responsabilities
+    content:
+    - Contribute to the crawler Node.js code along with designers and product managers.
+    - Build a state of the art, scalable & robust API controlling this crawler.
+    - Build a top-of-the-class admin and user UI.
+    - Integrate APIs like Google Analytics, both 3rd party and internal.
+    - Communicate with users and understand their pain points.
+
+  - name: requeriments
+    content:
+    - 2+ years of programming experience, preferably with JavaScript and Node.js.
+    - Ability to write code in ES2015/6/7.
+    - Rigor in high code quality, automated testing, and other engineering best practices.
+    - How to handle security, logs, errors, metrics, tests (unit, functional) in a Node.js
+      application.
+    - Great oral and written communication in English.
+
+  - name: nices
+    content:
+    - Experience with message brokers like RabbitMQ.
+    - Experience with Cheerio or any DOM parsing library.
+    - Experience with chrome headless, remote debugging protocol.
+    - Experience with docker.
+    - Experience with Jest, Yarn.
 
 recruitingSteps:
   - title: First Contact

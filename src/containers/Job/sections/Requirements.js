@@ -20,18 +20,16 @@ const CircleListItem = ListItem.extend`
   color: ${({ theme }) => theme.colors.textSecondary};
 `
 
-const Requirements = ({ data: { requeriments, nices, responsabilities } }) => (
+const Requirements = ({ data: requirements }) => (
   <Section>
     <Title>Requirements</Title>
-    {[
-      { subtitle: 'Responsabilities', data: responsabilities },
-      { subtitle: 'Requeriments', data: requeriments },
-      { subtitle: 'Nice to have', data: nices }
-    ].map(({ subtitle, data }) => (
-      <Subsection key={subtitle}>
-        <Subtitle>{subtitle}</Subtitle>
+    {requirements.map(({ name, content }) => (
+      <Subsection key={name}>
+        <Subtitle>{name}</Subtitle>
         <CustomList>
-          {data.map(item => <CircleListItem key={item}>{item}</CircleListItem>)}
+          {content.map(item => (
+            <CircleListItem key={item}>{item}</CircleListItem>
+          ))}
         </CustomList>
       </Subsection>
     ))}
@@ -39,11 +37,7 @@ const Requirements = ({ data: { requeriments, nices, responsabilities } }) => (
 )
 
 Requirements.propTypes = {
-  data: PropTypes.shape({
-    requeriments: PropTypes.arrayOf(PropTypes.object),
-    responsabilities: PropTypes.arrayOf(PropTypes.object),
-    nices: PropTypes.arrayOf(PropTypes.object)
-  })
+  data: PropTypes.arrayOf(PropTypes.object)
 }
 
 export default Requirements
