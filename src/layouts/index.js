@@ -1,22 +1,44 @@
-import React from 'react'
+import { ThemeProvider } from 'styled-components'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import { ThemeProvider } from 'styled-components'
-import { Layout } from '../components'
-import theme from '../constants/theme'
+import React from 'react'
 
+import theme from '../constants/theme'
+import { Layout } from '../components'
 import '../styles/main.scss'
 
 const TemplateWrapper = ({ children, data, ...props }) => {
-  const { name } = data.site.siteMetadata
+  const {
+    title,
+    description,
+    ogImage,
+    twitter,
+    siteUrl
+  } = data.site.siteMetadata
 
   return (
     <div>
-      <Helmet defaultTitle={name} titleTemplate={`%s | ${name}`}>
-        <meta name='twitter:site' content={name} />
-        <meta name='og:type' content='website' />
-        <meta name='og:site_name' content={name} />
-      </Helmet>
+      <Helmet
+        defaultTitle={`${title} | ${description}`}
+        titleTemplate={`%s | ${title}`}
+        meta={[
+          { itemProp: 'name', content: title },
+          { itemProp: 'description', content: description },
+          { itemProp: 'image', content: ogImage },
+          { name: 'twitter:card', content: 'summary_large_image' },
+          { name: 'twitter:title', content: title },
+          { name: 'twitter:description', content: description },
+          { name: 'twitter:site', content: twitter },
+          { name: 'twitter:image', content: ogImage },
+          { name: 'twitter:creator', content: twitter },
+          { property: 'og:url', content: siteUrl },
+          { name: 'og:title', content: title },
+          { name: 'og:description', content: description },
+          { name: 'og:image', content: ogImage },
+          { name: 'og:site_name', content: title },
+          { name: 'og:type', content: 'website' }
+        ]}
+      />
 
       <ThemeProvider theme={theme}>
         <Layout>{children({ ...props })}</Layout>

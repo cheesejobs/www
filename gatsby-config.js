@@ -1,8 +1,15 @@
+'use strict'
+
+const url = require('url')
+const SITE_URL = 'https://nosuitjobs.com'
+
 module.exports = {
   siteMetadata: {
-    name: 'nosuitjobs',
-    twitter: '@nosuitjobs',
-    description: 'Your IT jobs boards'
+    siteUrl: SITE_URL,
+    title: 'nosuitjobs',
+    description: 'Classy jobs for tech people',
+    ogImage: url.resolve(SITE_URL, '/preview.png'),
+    twitter: '@nosuitjobs'
   },
   plugins: [
     `gatsby-plugin-styled-components`,
