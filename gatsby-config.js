@@ -1,7 +1,9 @@
 'use strict'
 
 const url = require('url')
+
 const SITE_URL = 'https://nosuitjobs.com'
+const GOOGLE_ANALYTICS_CODE = 'UA'
 
 module.exports = {
   siteMetadata: {
@@ -13,7 +15,6 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-styled-components`,
-    `gatsby-plugin-netlify`,
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-yaml`,
     {
@@ -49,9 +50,16 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: `UA`
+        trackingId: GOOGLE_ANALYTICS_CODE
       }
     },
-    `gatsby-plugin-offline`
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: SITE_URL
+      }
+    },
+    `gatsby-plugin-offline`,
+    `gatsby-plugin-netlify`
   ]
 }
