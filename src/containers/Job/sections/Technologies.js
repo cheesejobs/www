@@ -67,7 +67,7 @@ const Technologies = ({ data }) => (
 )
 
 Technologies.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.object)
+  data: PropTypes.arrayOf(PropTypes.string)
 }
 
 export default Technologies

@@ -67,7 +67,7 @@ const TeamDistribution = ({ data }) => (
 )
 
 TeamDistribution.propTypes = {
-  data: PropTypes.object
+  data: PropTypes.arrayOf(PropTypes.object)
 }
 
 export default TeamDistribution
