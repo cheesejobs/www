@@ -10,9 +10,11 @@ export const pageQuery = graphql`
   query BlogPostByPath($path: String!) {
     site {
       siteMetadata {
-        name
-        twitter
+        siteUrl
+        title
         description
+        ogImage
+        twitter
       }
     }
     allJobsYaml(filter: { path: { eq: $path } }, limit: 1) {
@@ -46,9 +48,8 @@ export const pageQuery = graphql`
             time
           }
           requirements {
-            responsabilities
-            requeriments
-            nices
+            name
+            content
           }
           specs {
             description

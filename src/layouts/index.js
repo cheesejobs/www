@@ -9,11 +9,11 @@ import '../styles/main.scss'
 
 const TemplateWrapper = ({ children, data, ...props }) => {
   const {
+    siteUrl,
     title,
-    description,
     ogImage,
-    twitter,
-    siteUrl
+    description,
+    twitter
   } = data.site.siteMetadata
 
   return (
@@ -56,7 +56,10 @@ export const query = graphql`
   query LayoutQuery {
     site {
       siteMetadata {
-        name
+        siteUrl
+        title
+        description
+        ogImage
         twitter
       }
     }
