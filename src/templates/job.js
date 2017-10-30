@@ -24,7 +24,6 @@ export const pageQuery = graphql`
         node {
           id
           name
-          logo
           url
           size
         }
