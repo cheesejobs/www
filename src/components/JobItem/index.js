@@ -19,8 +19,9 @@ import {
 const JobItem = props => {
   const { date, company, path, specs, title } = props
   const location = specs.find(item => item.id === 'location').description
-  const { name, about, url: companyUrl } = company
-  const { hostname } = new URL(companyUrl)
+  const { name, about } = company
+  const hostname =
+    typeof window !== `undefined` ? new URL(company.url) : 'fallback'
   const isNew = dateHelper.inLast24Hours(date)
 
   return (
