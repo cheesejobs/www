@@ -17,7 +17,7 @@ import {
   PublishedDate
 } from './styled'
 
-const JobListItem = class extends Component {
+const JobItem = class extends Component {
   constructor (props) {
     super(props)
     this.fetchLogo = this.fetchLogo.bind(this)
@@ -69,16 +69,16 @@ const JobListItem = class extends Component {
   }
 }
 
-JobListItem.propTypes = {
+JobItem.propTypes = {
   city: PropTypes.string,
   company: PropTypes.shape({
     name: PropTypes.string,
     about: PropTypes.string,
     logo: PropTypes.string
   }),
-  date: PropTypes.number,
+  date: PropTypes.string,
   id: PropTypes.number,
   title: PropTypes.string
 }
 
-export default JobListItem
+export default JobItem
