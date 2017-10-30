@@ -29,10 +29,9 @@
     "gatsby-source-filesystem": "~1.5.5",
     "gatsby-transformer-sharp": "~1.6.10",
     "gatsby-transformer-yaml": "~1.5.11",
-    "normalize.css": "~7.0.0",
-    "polished": "^1.8.1",
+    "polished": "~1.8.1",
     "postcss-focus": "~3.0.0",
-    "unfetch": "~3.0.0"
+    "stream-to-promise": "~2.2.0"
   },
   "scripts": {
     "clean": "rm -rf node_modules",

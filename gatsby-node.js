@@ -1,15 +1,25 @@
-const Promise = require('bluebird')
+'use strict'
+
 const path = require('path')
+
+const fetchCompaniesLogos = require('./server/fetch-companies-logos')
 const jobTemplate = path.resolve('./src/templates/job.js')
 
-exports.createPages = ({ graphql, boundActionCreators }) => {
+exports.createPages = async ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators
 
-  return new Promise((resolve, reject) => {
-    resolve(
-      graphql(
-        `
+  const graphqlPromise = () =>
+    new Promise((resolve, reject) => {
+      resolve(
+        graphql(`
           {
+            allCompaniesYaml {
+              edges {
+                node {
+                  url
+                }
+              }
+            }
             allJobsYaml {
               edges {
                 node {
@@ -18,38 +28,41 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
               }
             }
           }
-        `
-      ).then(result => {
-        if (result.errors) {
+        `).then(result => {
+          if (!result.errors) return result
           console.log(result.errors)
-          reject(result.errors)
-        }
+          return reject(result.errors)
+        })
+      )
+    })
 
-        const jobs = result.data.allJobsYaml.edges.map(item => item.node)
+  const result = await graphqlPromise()
+  const jobs = result.data.allJobsYaml.edges.map(item => item.node)
+  const companiesUrls = result.data.allCompaniesYaml.edges.map(
+    item => item.node.url
+  )
 
-        jobs.forEach(job =>
-          createPage({
-            path: job.path,
-            component: jobTemplate,
-            context: {
-              path: job.path,
-              companyId: job.companyId
-            }
-          })
-        )
-      })
-    )
-  })
+  await fetchCompaniesLogos(companiesUrls)
+
+  jobs.forEach(job =>
+    createPage({
+      path: job.path,
+      component: jobTemplate,
+      context: {
+        path: job.path,
+        companyId: job.companyId
+      }
+    })
+  )
 }
 
-exports.modifyWebpackConfig = ({ config, stage }) => {
-  return config.merge({
+exports.modifyWebpackConfig = ({ config, stage }) =>
+  config.merge({
     resolve: {
       alias: {
-        Components: __dirname + '/src/components',
-        Containers: __dirname + '/src/containers',
-        Helpers: __dirname + '/src/helpers'
+        Components: path.join(__dirname, '/src/components'),
+        Containers: path.join(__dirname, '/src/containers'),
+        Helpers: path.join(__dirname, '/src/helpers')
       }
     }
   })
-}
