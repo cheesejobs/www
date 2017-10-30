@@ -6,8 +6,8 @@ export default ({ data, ...props }) => {
 
   const companies = data.allCompaniesYaml.edges
     .map(item => item.node)
-    .reduce((acc, { id, ...props }) => {
-      acc[id] = props
+    .reduce((acc, props) => {
+      acc[props.id] = props
       return acc
     }, {})
 

@@ -2,10 +2,9 @@ import React from 'react'
 import { Job } from '../containers'
 
 export default ({ data, pathContext, ...props }) => {
-  const job = data.jobs.edges[0].node
-  const company = data.companies.edges[0].node
+  const job = data.allJobsYaml.edges[0].node
+  const company = data.allCompaniesYaml.edges[0].node
   const meta = data.site.siteMetadata
-
   return <Job data={Object.assign({}, job, { company, meta })} />
 }
 
@@ -20,7 +19,7 @@ export const pageQuery = graphql`
         twitter
       }
     }
-    companies: allCompaniesYaml(filter: { id: { eq: $companyId } }, limit: 1) {
+    allCompaniesYaml(filter: { id: { eq: $companyId } }, limit: 1) {
       edges {
         node {
           id
@@ -31,7 +30,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    jobs: allJobsYaml(filter: { path: { eq: $path } }, limit: 1) {
+    allJobsYaml(filter: { path: { eq: $path } }, limit: 1) {
       edges {
         node {
           benefits {
