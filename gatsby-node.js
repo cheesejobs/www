@@ -1,5 +1,8 @@
-const Promise = require('bluebird')
+'use strict'
+
 const path = require('path')
+
+const fetchCompaniesLogos = require('./server/fetch-companies-logos')
 const jobTemplate = path.resolve('./src/templates/job.js')
 
 exports.createPages = async ({ graphql, boundActionCreators }) => {
@@ -8,19 +11,24 @@ exports.createPages = async ({ graphql, boundActionCreators }) => {
   const graphqlPromise = () =>
     new Promise((resolve, reject) => {
       resolve(
-        graphql(
-          `
-            {
-              allJobsYaml {
-                edges {
-                  node {
-                    path
-                  }
+        graphql(`
+          {
+            allCompaniesYaml {
+              edges {
+                node {
+                  url
                 }
               }
             }
-          `
-        ).then(result => {
+            allJobsYaml {
+              edges {
+                node {
+                  path
+                }
+              }
+            }
+          }
+        `).then(result => {
           if (!result.errors) return result
           console.log(result.errors)
           return reject(result.errors)
@@ -30,6 +38,12 @@ exports.createPages = async ({ graphql, boundActionCreators }) => {
 
   const result = await graphqlPromise()
   const jobs = result.data.allJobsYaml.edges.map(item => item.node)
+  const companiesUrls = result.data.allCompaniesYaml.edges.map(
+    item => item.node.url
+  )
+
+  await fetchCompaniesLogos(companiesUrls)
+
   jobs.forEach(job =>
     createPage({
       path: job.path,

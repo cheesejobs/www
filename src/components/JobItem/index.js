@@ -1,8 +1,7 @@
-/* global URL, btoa, FileReader */
+/* global URL */
 
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
-import fetch from 'unfetch'
 
 import { dateHelper } from 'Helpers'
 
@@ -17,56 +16,27 @@ import {
   PublishedDate
 } from './styled'
 
-const JobItem = class extends Component {
-  constructor (props) {
-    super(props)
-    this.fetchLogo = this.fetchLogo.bind(this)
-    this.state = { logo: null }
-  }
+const JobItem = props => {
+  const { date, company, path, specs, title } = props
+  const location = specs.find(item => item.id === 'location').description
+  const { name, about, url: companyUrl } = company
+  const { hostname } = new URL(companyUrl)
+  const isNew = dateHelper.inLast24Hours(date)
 
-  fetchLogo (domain) {
-    fetch(`https://logo.clearbit.com/${domain}?size=128`)
-      .then(res => res.blob())
-      .then(blob => {
-        const reader = new FileReader()
-        reader.addEventListener('loadend', () => {
-          const base64 = btoa(
-            String.fromCharCode(...new Uint8Array(reader.result))
-          )
-          const logo = `data:image/png;base64, ${base64}`
-          this.setState({ logo })
-        })
-
-        reader.readAsArrayBuffer(blob)
-      })
-  }
-
-  componentDidMount () {
-    const { hostname } = new URL(this.props.company.url)
-    this.fetchLogo(hostname)
-  }
-
-  render () {
-    const { date, company, path, specs, title } = this.props
-    const location = specs.find(item => item.id === 'location').description
-    const { name, about } = company
-    const isNew = dateHelper.inLast24Hours(date)
-
-    return (
-      <JobItemNode>
-        <Header>
-          {<Logo src={this.state.logo} alt={name} />}
-          <Location>{location}</Location>
-          <PublishedDate>{dateHelper.ago(date)}</PublishedDate>
-        </Header>
-        <Position to={path}>
-          {isNew && <New>NEW</New>}
-          {title} @ {name}
-        </Position>
-        {about && <About>{about}</About>}
-      </JobItemNode>
-    )
-  }
+  return (
+    <JobItemNode>
+      <Header>
+        {<Logo src={`/img/logo/${hostname}.png`} alt={name} />}
+        <Location>{location}</Location>
+        <PublishedDate>{dateHelper.ago(date)}</PublishedDate>
+      </Header>
+      <Position to={path}>
+        {isNew && <New>NEW</New>}
+        {title} @ {name}
+      </Position>
+      {about && <About>{about}</About>}
+    </JobItemNode>
+  )
 }
 
 JobItem.propTypes = {
