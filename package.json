@@ -15,7 +15,6 @@
     }
   ],
   "dependencies": {
-    "aigle": "~1.9.0",
     "cssnano": "~3.10.0",
     "gatsby": "~1.9.63",
     "gatsby-link": "~1.6.21",
