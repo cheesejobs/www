@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import { dateHelper } from 'Helpers'
 import { Icon } from 'Components'
 import { Section } from '../styled'
-import T from '../../../constants/texts.json'
+import TEXTS from '../../../constants/texts.json'
 
 const Back = styled(Link)`
   font-size: 0.8rem;
@@ -42,16 +42,20 @@ const Position = styled.h1`
 const Company = styled.div`
   position: relative;
   font-size: 1.5rem;
-  margin-bottom: 1rem;
+  margin: 1rem 0 0.5rem;
 
   & > a {
     color: var(--color-text);
   }
 `
 
+const Title = styled.div`
+  margin: 2.5rem 0;
+`
+
 const DescriptionTitle = styled.h3`
   font-size: 1rem;
-  margin: 1rem 0 0.5rem;
+  margin: 1rem 0;
 `
 
 const DescriptionText = styled.p`
@@ -68,12 +72,7 @@ const renderDescription = (title, text, companyName) => (
   </div>
 )
 
-const Header = ({
-  company = { name: 'Facebook', url: 'http://facebook.com' },
-  date,
-  title,
-  description
-}) => (
+const Header = ({ company, date, title, description, ...props }) => (
   <Section>
     <Top>
       <Back to='/'>
@@ -81,12 +80,20 @@ const Header = ({
       </Back>
       <PublishedDate>{dateHelper.ago(date)}</PublishedDate>
     </Top>
-    <Position>{title}</Position>
-    <Company>
-      <Link to={company.url}>{company.name}</Link>
-    </Company>
-    {['what', 'why', 'other'].map(title =>
-      renderDescription(T.description[title], description[title], company.name)
+
+    <Title>
+      <Position>{title}</Position>
+      <Company>
+        <Link to={company.url}>at {company.name}</Link>
+      </Company>
+    </Title>
+
+    {Object.keys(description).map(title =>
+      renderDescription(
+        TEXTS.description[title],
+        description[title],
+        company.name
+      )
     )}
   </Section>
 )

@@ -1,8 +1,8 @@
 {
   "description": {
-    "what": "What is %s?",
-    "why": "What are we looking for?",
-    "other": "Other"
+    "why": "Why %s?",
+    "looking": "What are we looking for?",
+    "other": ""
   },
 
   "benefits": {

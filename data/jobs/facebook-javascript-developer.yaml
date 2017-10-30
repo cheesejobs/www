@@ -6,9 +6,9 @@ teamSize: 7
 companyId: facebook
 
 description:
-  what: |-
-    Algolia is a perfect fit for structured data and we expect our users to send us their data via our REST API. While this works in many cases, there are a lot situations where our users cannot send us their data via an API call.
   why: |-
+    Algolia is a perfect fit for structured data and we expect our users to send us their data via our REST API. While this works in many cases, there are a lot situations where our users cannot send us their data via an API call.
+  looking: |-
     We are building a reusable, configurable and highly scalable web crawler from scratch. We want to work with experienced engineers willing to work on such risky but impactful projects. You will be part of a small team willing to broaden the scope of "search" at Algolia.
   other: |-
     Are you a resilient problem solver who isn't afraid to think outside the box and get their hands dirty? We expect you to take ownership and be able to execute without defined processes and implicit direction. We're looking for candidates who raise the level of our teams.
