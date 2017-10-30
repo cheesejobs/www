@@ -2,12 +2,15 @@ import React from 'react'
 import { Job } from '../containers'
 
 export default ({ data, pathContext, ...props }) => {
-  const job = data.allJobsYaml.edges[0].node
-  return <Job data={job} />
+  const job = data.jobs.edges[0].node
+  const company = data.companies.edges[0].node
+  const meta = data.site.siteMetadata
+
+  return <Job data={Object.assign({}, job, { company, meta })} />
 }
 
 export const pageQuery = graphql`
-  query BlogPostByPath($path: String!) {
+  query BlogPostByPath($path: String!, $companyId: String) {
     site {
       siteMetadata {
         siteUrl
@@ -17,7 +20,18 @@ export const pageQuery = graphql`
         twitter
       }
     }
-    allJobsYaml(filter: { path: { eq: $path } }, limit: 1) {
+    companies: allCompaniesYaml(filter: { id: { eq: $companyId } }, limit: 1) {
+      edges {
+        node {
+          id
+          name
+          logo
+          url
+          size
+        }
+      }
+    }
+    jobs: allJobsYaml(filter: { path: { eq: $path } }, limit: 1) {
       edges {
         node {
           benefits {
@@ -27,9 +41,9 @@ export const pageQuery = graphql`
           }
           date
           description {
-            other
-            what
             why
+            looking
+            other
           }
           equipment {
             computer

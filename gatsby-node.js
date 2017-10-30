@@ -27,15 +27,16 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 
         const jobs = result.data.allJobsYaml.edges.map(item => item.node)
 
-        jobs.forEach(job => {
+        jobs.forEach(job =>
           createPage({
             path: job.path,
             component: jobTemplate,
             context: {
-              path: job.path
+              path: job.path,
+              companyId: job.companyId
             }
           })
-        })
+        )
       })
     )
   })
