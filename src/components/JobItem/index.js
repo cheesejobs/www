@@ -21,7 +21,7 @@ const JobItem = props => {
   const location = specs.find(item => item.id === 'location').description
   const { name, about } = company
   const hostname =
-    typeof window !== `undefined` ? new URL(company.url) : 'fallback'
+    typeof window !== `undefined` ? new URL(company.url).hostname : 'fallback'
   const isNew = dateHelper.inLast24Hours(date)
 
   return (
