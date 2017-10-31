@@ -52,6 +52,10 @@ const Team = styled.li`
   `};
 `
 
+const Name = styled.span`
+  line-height: 1;
+`
+
 const TeamDistribution = ({ data }) => (
   <Section>
     <Title>Team Distribution</Title>
@@ -59,7 +63,7 @@ const TeamDistribution = ({ data }) => (
       {data.map(({ id, value }) => (
         <Team key={id}>
           <People>{value}</People>
-          {T[id]}
+          <Name>{T[id]}</Name>
         </Team>
       ))}
     </TeamList>

@@ -52,6 +52,10 @@ const TechItem = styled.li`
   `};
 `
 
+const Name = styled.span`
+  line-height: 1;
+`
+
 const Technologies = ({ data }) => (
   <Section>
     <Title>Technologies</Title>
@@ -59,7 +63,7 @@ const Technologies = ({ data }) => (
       {data.map(name => (
         <TechItem key={name}>
           <TechIcon value={name} />
-          {name}
+          <Name>{name}</Name>
         </TechItem>
       ))}
     </TechList>
