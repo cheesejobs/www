@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import media from '../../../helpers/responsive'
 import T from '../../../constants/texts.json'
-import { Icon } from 'Components'
+import { Icon, Tooltip } from 'Components'
 import { Section, Title } from '../styled'
 
 const ItemIcon = styled(Icon)`
@@ -21,11 +21,7 @@ const List = styled.ul`
 
 const Item = styled.li`
   display: flex;
-  align-items: center;
-  text-transform: capitalize;
-  border-radius: 3px;
   flex: 0 0 49.5%;
-  text-align: center;
   margin-right: 1%;
   margin-bottom: 1rem;
   color: ${({ theme }) => theme.colors.textPrimary};
@@ -40,16 +36,40 @@ const Item = styled.li`
   `};
 `
 
+const Text = styled.span``
+
+const UnderlineItem = styled(Item)`
+  & ${Text} {
+    border-bottom: 1px dotted ${({ theme }) => theme.colors.accent};
+  }
+`
+
+const renderWithTooltip = ({ description, icon, id }) => (
+  <UnderlineItem key={id}>
+    <Tooltip content={description}>
+      <ItemIcon value={icon} />
+      <Text>{T.benefits[id]}</Text>
+    </Tooltip>
+  </UnderlineItem>
+)
+
+const renderWithoutTooltip = ({ description, icon, id }) => (
+  <Item key={id}>
+    <ItemIcon value={icon} />
+    <Text>{T.benefits[id]}</Text>
+  </Item>
+)
+
 const Benefits = ({ data }) => (
   <Section>
     <Title>Benefits</Title>
     <List>
-      {data.map(({ description, icon, id }) => (
-        <Item key={id}>
-          <ItemIcon value={icon} />
-          {T.benefits[id]}
-        </Item>
-      ))}
+      {data.map(
+        item =>
+          item.description
+            ? renderWithTooltip(item)
+            : renderWithoutTooltip(item)
+      )}
     </List>
   </Section>
 )

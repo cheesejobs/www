@@ -17,9 +17,9 @@ export const Content = styled.div`
   color: #fff;
   font-size: 0.7rem;
   font-weight: normal;
-  text-align: center;
-  padding: 0.5rem;
+  padding: 0 0.5rem;
   border-radius: 2px;
+  white-space: nowrap;
 `
 
 export const Gap = styled.div`
@@ -32,7 +32,6 @@ export const Gap = styled.div`
 export const TooltipNode = styled.div`
   position: absolute;
   z-index: 99;
-  min-width: 230px;
   max-width: 420px;
   background: ${({ theme }) => theme.colors.textTitle};
   left: 100%;
@@ -46,6 +45,5 @@ export const TooltipNode = styled.div`
 export const Wrapper = styled.abbr`
   position: relative;
   display: inline-block;
-  z-index: 100;
   cursor: help;
 `
