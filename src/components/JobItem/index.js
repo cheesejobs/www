@@ -18,7 +18,7 @@ import {
 
 const FALLBACK_LOGO = 'fallback.gif'
 const getLogoUrl = company => `${new URL(company.url).hostname}.png`
-const isClientSide = window !== `undefined`
+const isClientSide = typeof window !== `undefined`
 const getCompanyLogo = company =>
   `/img/logo/${isClientSide ? getLogoUrl(company) : FALLBACK_LOGO}`
 
