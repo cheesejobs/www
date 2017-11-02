@@ -16,6 +16,7 @@
   ],
   "dependencies": {
     "cssnano": "~3.10.0",
+    "date-fns": "~1.29.0",
     "gatsby": "~1.9.63",
     "gatsby-link": "~1.6.21",
     "gatsby-plugin-canonical-urls": "~1.0.8",
