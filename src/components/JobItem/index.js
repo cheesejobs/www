@@ -16,18 +16,22 @@ import {
   PublishedDate
 } from './styled'
 
+const FALLBACK_LOGO = 'fallback.gif'
+const getLogoUrl = company => `${new URL(company.url).hostname}.png`
+const isClientSide = window !== `undefined`
+const getCompanyLogo = company =>
+  `/img/logo/${isClientSide ? getLogoUrl(company) : FALLBACK_LOGO}`
+
 const JobItem = props => {
   const { date, company, path, specs, title } = props
   const location = specs.find(item => item.id === 'location').description
   const { name, about } = company
-  const hostname =
-    typeof window !== `undefined` ? new URL(company.url).hostname : 'fallback'
   const isNew = dateHelper.inLast24Hours(date)
 
   return (
     <JobItemNode>
       <Header>
-        {<Logo src={`/img/logo/${hostname}.png`} alt={name} />}
+        {<Logo src={getCompanyLogo(company)} alt={name} />}
         <Location>{location}</Location>
         <PublishedDate>{dateHelper.ago(date)}</PublishedDate>
       </Header>
