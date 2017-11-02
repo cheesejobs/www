@@ -7,16 +7,23 @@ const Footer = styled.footer`
   font-size: 0.7rem;
   color: ${({ theme }) => theme.colors.textSecondary};
   text-align: center;
+`
 
-  & > a {
-    color: ${({ theme }) => theme.colors.accent};
+const FooterLink = styled(Link)`
+  color: ${({ theme }) => theme.colors.accent};
+  &:hover {
+    color: ${({ theme }) => theme.colors.primary};
   }
 `
 
 export default () => (
   <Footer>
-    <Link to='/'>Site Terms</Link> & <Link to='/'>Conditions</Link> for use and
-    our Privacy Policy apply. © 2017 Cheesjobs. All References marked with a ™
-    or ® are trademarks of Cheesjobs. All rights reserved.
+    <FooterLink to='/about'>About</FooterLink>
+    <span> / </span>
+    <FooterLink target='_blank' to='https://twitter.com/nosuitjobs'>
+      Twitter
+    </FooterLink>
+    <span> / </span>
+    <FooterLink to='mailto:hello@nosuitjobs.com'>Contact</FooterLink>
   </Footer>
 )

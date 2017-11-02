@@ -42,12 +42,13 @@ export const Header = styled.div`
 
 export const Logo = styled.img`
   position: absolute;
-  left: -1rem;
-  width: 1.8rem;
-  height: 1.8rem;
+  left: -24px;
+  width: 36px;
+  height: 36px;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
   border-radius: 0.2rem;
   background-color: white;
+  border: 3px solid #fff;
 
   ${media.phone`
     position: relative;
