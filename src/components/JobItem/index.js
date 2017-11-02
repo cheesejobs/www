@@ -37,7 +37,7 @@ const JobItem = props => {
       </Header>
       <Position to={path}>
         {isNew && <New>NEW</New>}
-        {title} @ {name}
+        {title}
       </Position>
       {about && <About>{about}</About>}
     </JobItemNode>

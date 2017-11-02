@@ -27,11 +27,11 @@ export const Wrapper = styled.div`
 `
 
 export const Logo = styled.img`
-  height: calc(6rem / 2.5);
-
-  ${media.phone`
-    margin-bottom: 1.5rem;
-  `};
+  max-width: 100%;
+  height: 45px;
+  position: absolute;
+  margin-left: -64px;
+  margin-top: 3px;
 `
 
 export const Nav = styled.nav`
@@ -52,4 +52,15 @@ export const Nav = styled.nav`
       margin-right: 0;
     }
   }
+`
+
+export const Name = styled.h1`
+  color: ${({ theme }) => theme.colors.primary};
+  font-size: 2rem;
+`
+
+export const Description = styled.h1`
+  color: ${({ theme }) => theme.colors.primary};
+  font-size: 12px;
+  padding-top: 0.5rem;
 `

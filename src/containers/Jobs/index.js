@@ -9,7 +9,7 @@ const Jobs = ({ jobs, companies }) => (
       {jobs.map((job, index) => {
         const { companyId, ...props } = job
         const company = companies[companyId]
-        return <JobItem key={props.date} company={company} {...props} />
+        return <JobItem key={props.path} company={company} {...props} />
       })}
     </List>
 

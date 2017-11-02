@@ -32,7 +32,7 @@ export const Header = styled.div`
   text-transform: uppercase;
   display: flex;
   color: ${({ theme }) => theme.colors.textSecondary};
-  font-size: 0.8rem;
+  font-size: 12px;
   align-items: center;
 
   ${media.phone`
@@ -68,8 +68,8 @@ export const PublishedDate = styled.span`
 `
 
 export const Position = styled(Link)`
-  font-size: 1rem;
-  margin: 1rem 0 0.5rem;
+  font-size: 1.25rem;
+  margin: 0.5rem 0;
   color: ${({ theme }) => theme.colors.accent};
   display: flex;
   align-items: center;
