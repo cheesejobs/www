@@ -1,9 +1,9 @@
-title: Ruby Developer
-path: "/facebook/ruby-developer"
+title: Go Developer
+path: "/carto/go-developer"
 date: "2015-05-01T22:12:03.284Z"
 team: backend
 teamSize: 7
-companyId: facebook
+companyId: carto
 
 description:
   why: |-
@@ -163,7 +163,7 @@ workMethodology:
     value: false
 
 technologies:
-  - ruby
+  - go
   - webpack
   - travis
   - php
@@ -193,7 +193,7 @@ equipment:
 
 specs:
   - id: location
-    description: London, United Kingdom
+    description: San Francisco, USA
   - id: salary
     description: 60K - 80K GBP
   - id: holidayPolitic

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Job } from '../containers'
+import { Job } from 'Containers'
 
 export default ({ data, pathContext, ...props }) => {
   const job = data.allJobsYaml.edges[0].node
@@ -9,7 +9,7 @@ export default ({ data, pathContext, ...props }) => {
 }
 
 export const pageQuery = graphql`
-  query BlogPostByPath($path: String!, $companyId: String) {
+  query BlogPostByPath($path: String!, $companyId: String!) {
     site {
       siteMetadata {
         siteUrl
