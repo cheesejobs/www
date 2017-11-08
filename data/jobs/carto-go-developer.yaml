@@ -1,0 +1,206 @@
+title: Go Developer
+path: "/carto-go-developer"
+date: "2015-05-01T22:12:03.284Z"
+team: frontend
+teamSize: 7
+companyId: carto
+
+description:
+  why: |-
+    Algolia is a perfect fit for structured data and we expect our users to send us their data via our REST API. While this works in many cases, there are a lot situations where our users cannot send us their data via an API call.
+  looking: |-
+    We are building a reusable, configurable and highly scalable web crawler from scratch. We want to work with experienced engineers willing to work on such risky but impactful projects. You will be part of a small team willing to broaden the scope of "search" at Algolia.
+  other: |-
+    Are you a resilient problem solver who isn't afraid to think outside the box and get their hands dirty? We expect you to take ownership and be able to execute without defined processes and implicit direction. We're looking for candidates who raise the level of our teams.
+
+benefits:
+  - id: BikeParking
+    icon: bike
+    description: Comminuty parking
+  - id: ConferenceBudget
+    icon: conference
+    description: Only if giving talks
+  - id: FreeBeverages
+    icon: beverage
+    description: <3
+  - id: FreeCoffee
+    icon: coffee
+    description: <3
+  - id: FreeSnacks
+    icon: food
+    description: <3
+  - id: InHouseHackDays
+    icon: computer
+    description: Every Friday
+  - id: InHouseTrainings
+    icon: home
+    description: Once a month
+  - id: Kitchen
+    icon: kitchen
+    description:
+  - id: MobilePhone
+    icon: mobile
+    description:
+  - id: PlayRoom
+    icon: games
+    description:
+  - id: PrivateHealthCare
+    icon: health
+    description:
+  - id: Shower
+    icon: shower
+    description:
+  - id: GymSubscription
+    icon: gym
+    description:
+  - id: TeamEvents
+    icon: group
+    description:
+  - id: TrainingBudget
+    icon: university
+    description:
+  - id: MaternityLeave
+    icon: baby
+    description:
+  - id: Childcare
+    icon: childcare
+    description:
+  - id: PerformanceBonus
+    icon: improvement
+    description:
+  - id: DiversityProgram
+    icon: diversity
+    description:
+  - id: PensionPlan
+    icon: pension
+    description:
+  - id: SickLeave
+    icon: medicine
+    description:
+  - id: StockOptions
+    icon: equity
+    description:
+
+teamDistribution:
+  - id: frontend
+    value: 10
+  - id: backend
+    value: 8
+  - id: devops
+    value: 9
+  - id: sales
+    value: 12
+  - id: design
+    value: 5
+
+requirements:
+  - name: responsabilities
+    content:
+    - Contribute to the crawler Node.js code along with designers and product managers.
+    - Build a state of the art, scalable & robust API controlling this crawler.
+    - Build a top-of-the-class admin and user UI.
+    - Integrate APIs like Google Analytics, both 3rd party and internal.
+    - Communicate with users and understand their pain points.
+
+  - name: requeriments
+    content:
+    - 2+ years of programming experience, preferably with JavaScript and Node.js.
+    - Ability to write code in ES2015/6/7.
+    - Rigor in high code quality, automated testing, and other engineering best practices.
+    - How to handle security, logs, errors, metrics, tests (unit, functional) in a Node.js
+      application.
+    - Great oral and written communication in English.
+
+  - name: nices
+    content:
+    - Experience with message brokers like RabbitMQ.
+    - Experience with Cheerio or any DOM parsing library.
+    - Experience with chrome headless, remote debugging protocol.
+    - Experience with docker.
+    - Experience with Jest, Yarn.
+
+recruitingSteps:
+  - title: First Contact
+    description: We will contact with you for a online session, just for meeting.
+    time: 15 days
+  - title: Code challenge
+    description: We will send to you a code challenge designed for your future work
+      mates.
+    time: 15 days
+  - title: Team meeting
+    description: After your coding challenge, we contact with your for meet the rest
+      of the team. We pay you the travel expenses.
+    time: 15 days
+  - title: Your first day
+    description: Congrulations, you will be part of the amazing Facebook team!
+
+workMethodology:
+  - id: dailyBuilds
+    value: true
+  - id: codeReview
+    value: true
+  - id: codeInInterview
+    value: true
+  - id: commitFirstDay
+    value: false
+  - id: bestTools
+    value: true
+  - id: qualityAssurance
+    value: false
+  - id: workConditions
+    value: true
+  - id: sourceControl
+    value: true
+  - id: issueTracker
+    value: true
+  - id: oneStepBuild
+    value: true
+  - id: bugsBeforeCode
+    value: true
+  - id: projectUp2h
+    value: false
+  - id: pairProgramming
+    value: false
+
+technologies:
+  - go
+  - webpack
+  - travis
+  - php
+  - swift
+  - babel
+  - backbonejs
+  - d3js
+  - git
+  - grunt
+  - handlebars
+  - jasmine
+
+workProfile:
+  newFeatures: 60
+  maintenance: 15
+  clientSupport: 5
+  documentWriting: 5
+  meetings: 15
+
+equipment:
+  computer: Laptop
+  monitors: 27"
+  operating_system:
+    apple: true
+    windows: false
+    linux: true
+
+specs:
+  - id: location
+    description: San Francisco, USA
+  - id: salary
+    description: 60K - 80K GBP
+  - id: holidayPolitic
+    description: 24 days + sick days + move days
+  - id: remote
+    description: Yes
+  - id: remoteLocation
+    description: Anywhere in the world
+  - id: flexibleHours
+    description: Yes

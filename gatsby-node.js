@@ -3,6 +3,7 @@
 const path = require('path')
 
 const fetchCompaniesLogos = require('./server/fetch-companies-logos')
+const jobsTemplate = path.resolve('./src/templates/jobs.js')
 const jobTemplate = path.resolve('./src/templates/job.js')
 
 exports.createPages = async ({ graphql, boundActionCreators }) => {
@@ -16,6 +17,7 @@ exports.createPages = async ({ graphql, boundActionCreators }) => {
             allCompaniesYaml {
               edges {
                 node {
+                  id
                   url
                 }
               }
@@ -42,8 +44,23 @@ exports.createPages = async ({ graphql, boundActionCreators }) => {
     item => item.node.url
   )
 
+  const companiesIds = result.data.allCompaniesYaml.edges.map(
+    item => item.node.id
+  )
+
+  // update all companies logos
   await fetchCompaniesLogos(companiesUrls)
 
+  // index
+  createPage({
+    path: '/',
+    component: jobsTemplate,
+    context: {
+      path: '/'
+    }
+  })
+
+  // individual offers
   jobs.forEach(job =>
     createPage({
       path: job.path,
@@ -54,6 +71,18 @@ exports.createPages = async ({ graphql, boundActionCreators }) => {
       }
     })
   )
+
+  companiesIds.forEach(companyId => {
+    const companyPath = `/${companyId}/`
+    createPage({
+      path: companyPath,
+      component: jobsTemplate,
+      context: {
+        path: companyPath,
+        companyId
+      }
+    })
+  })
 }
 
 exports.modifyWebpackConfig = ({ config, stage }) =>
