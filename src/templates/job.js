@@ -9,7 +9,7 @@ export default ({ data, pathContext, ...props }) => {
 }
 
 export const pageQuery = graphql`
-  query BlogPostByPath($path: String!, $companyId: String) {
+  query BlogPostByPath($path: String!, $companyId: String!) {
     site {
       siteMetadata {
         siteUrl

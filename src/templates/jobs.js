@@ -15,7 +15,7 @@ export default ({ data, ...props }) => {
 }
 
 export const pageQuery = graphql`
-  query PostByCompany($companyId: String) {
+  query PostByCompany($companyId: String, $team: String) {
     allCompaniesYaml(filter: { id: { eq: $companyId } }) {
       edges {
         node {
@@ -26,7 +26,9 @@ export const pageQuery = graphql`
         }
       }
     }
-    allJobsYaml(filter: { companyId: { eq: $companyId } }) {
+    allJobsYaml(
+      filter: { companyId: { eq: $companyId }, team: { eq: $team } }
+    ) {
       edges {
         node {
           team
