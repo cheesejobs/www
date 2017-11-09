@@ -4,6 +4,19 @@ const path = require('path')
 
 const fetchCompaniesLogos = require('./server/fetch-companies-logos')
 const jobTemplate = path.resolve('./src/templates/job.js')
+const { createFilePath } = require(`gatsby-source-filesystem`)
+
+exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
+  const { createNodeField } = boundActionCreators
+  if (node.internal.type === `MarkdownRemark`) {
+    const slug = createFilePath({ node, getNode, basePath: `pages` })
+    createNodeField({
+      node,
+      name: `slug`,
+      value: slug
+    })
+  }
+}
 
 exports.createPages = async ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators
@@ -27,6 +40,15 @@ exports.createPages = async ({ graphql, boundActionCreators }) => {
                 }
               }
             }
+            allMarkdownRemark {
+              edges {
+                node {
+                  fields {
+                    slug
+                  }
+                }
+              }
+            }
           }
         `).then(result => {
           if (!result.errors) return result
@@ -38,6 +60,7 @@ exports.createPages = async ({ graphql, boundActionCreators }) => {
 
   const result = await graphqlPromise()
   const jobs = result.data.allJobsYaml.edges.map(item => item.node)
+  const markdowns = result.data.allMarkdownRemark.edges.map(item => item.node)
   const companiesUrls = result.data.allCompaniesYaml.edges.map(
     item => item.node.url
   )
@@ -54,6 +77,16 @@ exports.createPages = async ({ graphql, boundActionCreators }) => {
       }
     })
   )
+
+  markdowns.map(({ fields }) => {
+    createPage({
+      path: fields.slug,
+      component: path.resolve(`./src/templates/page.js`),
+      context: {
+        slug: fields.slug
+      }
+    })
+  })
 }
 
 exports.modifyWebpackConfig = ({ config, stage }) =>

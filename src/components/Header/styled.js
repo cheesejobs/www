@@ -7,6 +7,7 @@ export const HeaderNode = styled.header`
   min-height: 6rem;
   display: flex;
   align-items: center;
+  margin-bottom: 1rem;
 
   ${media.phone`
     padding: 2rem 0;

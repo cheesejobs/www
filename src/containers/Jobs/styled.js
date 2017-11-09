@@ -4,7 +4,7 @@ import { responsiveHelper as media } from 'Helpers'
 export const Wrapper = styled.div`
   display: flex;
   align-items: flex-start;
-  padding: 1rem 2rem 0;
+  padding: 0 2rem;
 
   ${media.tablet`
     flex-direction: column;
