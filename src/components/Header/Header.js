@@ -13,7 +13,7 @@ const Header = ({ children }) => (
         <Description>Classy jobs for tech people</Description>
       </Link>
       <Nav>
-        <Link to='/help'>Ask us anything</Link>
+        <Link to='/about'>About us</Link>
         <Button>Post new offer</Button>
       </Nav>
     </Wrapper>

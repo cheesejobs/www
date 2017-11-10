@@ -1,12 +1,4 @@
----
-title: "About us"
----
-
-# Markdown: Syntax
-
-## Overview
-
-### Philosophy
+# About nosuitjobs
 
 Markdown is intended to be as easy-to-read and easy-to-write as is feasible.
 

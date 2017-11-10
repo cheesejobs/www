@@ -32,9 +32,7 @@ export const Section = styled.section`
   box-shadow: 0 1px ${({ theme }) => theme.colors.divider};
 `
 
-export const Subsection = styled.section`
-  padding: 0.5rem 0;
-`
+export const Subsection = styled.section``
 
 export const Title = styled.h2`
   font-size: 1.2rem;
@@ -49,7 +47,6 @@ export const Title = styled.h2`
 
 export const Subtitle = styled.h4`
   font-size: 0.8rem;
-  margin: 1rem 0 0.5rem;
   text-transform: uppercase;
 `
 

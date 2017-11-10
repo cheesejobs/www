@@ -26,6 +26,7 @@ const Top = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 1rem;
 `
 
 const PublishedDate = styled.span`
@@ -36,7 +37,6 @@ const PublishedDate = styled.span`
 
 const Position = styled.h1`
   font-size: 2rem;
-  margin: 1rem 0 0.5rem;
 `
 
 const Company = styled.div`
@@ -49,9 +49,7 @@ const Company = styled.div`
   }
 `
 
-const Title = styled.div`
-  margin: 2.5rem 0;
-`
+const Title = styled.header``
 
 const DescriptionTitle = styled.h3`
   font-size: 1rem;

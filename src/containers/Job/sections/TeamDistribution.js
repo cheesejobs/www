@@ -16,6 +16,8 @@ const TeamList = styled.ul`
   display: flex;
   justify-content: evenly;
   flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
 `
 
 const Team = styled.li`
