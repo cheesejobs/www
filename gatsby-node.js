@@ -3,6 +3,7 @@
 const path = require('path')
 
 const fetchCompaniesLogos = require('./server/fetch-companies-logos')
+const jobsTemplate = path.resolve('./src/templates/jobs.js')
 const jobTemplate = path.resolve('./src/templates/job.js')
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
@@ -29,6 +30,7 @@ exports.createPages = async ({ graphql, boundActionCreators }) => {
             allCompaniesYaml {
               edges {
                 node {
+                  id
                   url
                 }
               }
@@ -37,6 +39,8 @@ exports.createPages = async ({ graphql, boundActionCreators }) => {
               edges {
                 node {
                   path
+                  team
+                  companyId
                 }
               }
             }
@@ -61,13 +65,34 @@ exports.createPages = async ({ graphql, boundActionCreators }) => {
   const result = await graphqlPromise()
   const jobs = result.data.allJobsYaml.edges.map(item => item.node)
   const markdowns = result.data.allMarkdownRemark.edges.map(item => item.node)
+
+  const teams = jobs.reduce((acc, job) => {
+    if (!acc.includes(job.team)) acc.push(job.team)
+    return acc
+  }, [])
+
   const companiesUrls = result.data.allCompaniesYaml.edges.map(
     item => item.node.url
   )
 
+  const companiesIds = result.data.allCompaniesYaml.edges.map(
+    item => item.node.id
+  )
+
+  // update all companies logos
   await fetchCompaniesLogos(companiesUrls)
 
-  jobs.forEach(job =>
+  // index
+  createPage({
+    path: '/',
+    component: jobsTemplate,
+    context: {
+      path: '/'
+    }
+  })
+
+  // individual offers
+  jobs.forEach(job => {
     createPage({
       path: job.path,
       component: jobTemplate,
@@ -76,8 +101,35 @@ exports.createPages = async ({ graphql, boundActionCreators }) => {
         companyId: job.companyId
       }
     })
-  )
+  })
 
+  // offers by company
+  companiesIds.forEach(companyId => {
+    const companyPath = `/${companyId}/`
+    createPage({
+      path: companyPath,
+      component: jobsTemplate,
+      context: {
+        path: companyPath,
+        companyId
+      }
+    })
+  })
+
+  // offers by team
+  teams.forEach(team => {
+    const teamPath = `/${team}/`
+    createPage({
+      path: teamPath,
+      component: jobsTemplate,
+      context: {
+        path: teamPath,
+        team
+      }
+    })
+  })
+
+  // markdown pages
   markdowns.map(({ fields }) => {
     createPage({
       path: fields.slug,

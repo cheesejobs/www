@@ -11,4 +11,29 @@ export const Title = styled.h1`
   margin-top: 1rem;
 `
 
-export const Body = styled.section``
+export const Body = styled.section`
+  & h1 {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    margin: 1.25rem 0;
+  }
+
+  & h2 {
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+    margin: 1rem 0;
+  }
+
+  & h3,
+  & h4,
+  & h5,
+  & h6 {
+    font-size: 1.25rem;
+    line-height: 1.625rem;
+    margin: 1rem 0;
+  }
+
+  p {
+    line-height: 1.6rem;
+  }
+`
