@@ -18,6 +18,7 @@ export const Wrapper = styled.div`
 export const List = styled.ul`
   width: 100%;
   flex-grow: 1;
+  margin: 0;
 
   & > * {
     width: 100%;
