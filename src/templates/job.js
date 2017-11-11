@@ -26,6 +26,7 @@ export const pageQuery = graphql`
           name
           url
           size
+          founded
           social {
             id
             url

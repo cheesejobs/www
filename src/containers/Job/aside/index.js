@@ -1,6 +1,8 @@
+/* global URL */
+
 import React from 'react'
 import { Box, Button, List, ListItem, ListText, ListIcon } from 'Components'
-import { Aside, Share } from './styled'
+import { Aside } from './styled'
 import styled from 'styled-components'
 
 const mapIcon = {
@@ -10,9 +12,12 @@ const mapIcon = {
 const getSpecIcon = id => mapIcon[id] || id
 
 const getSpecs = ({ specs, company }) =>
-  specs.concat([
+  [
+    { id: 'founded', description: `Founded at ${company.founded}` },
     { id: 'team_medium', description: `${company.size} Employees` }
-  ])
+  ]
+    .concat(specs)
+    .concat([{ id: 'earth', description: `${new URL(company.url).hostname}` }])
 
 const ListSpectItem = ListItem.extend`
   margin-bottom: 14px;
@@ -35,8 +40,8 @@ const ListSocialItem = ListItem.extend`
 `
 
 const ListSocialIcon = ListIcon.extend`
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
 `
 
 const ListSocialIconLink = styled.a`
@@ -45,6 +50,16 @@ const ListSocialIconLink = styled.a`
     color: ${({ theme }) => theme.colors.accent};
   }
 `
+
+const WebsiteImagePreview = styled.img`
+  width: 100%;
+`
+
+const renderWebsitePreview = url => (
+  <WebsiteImagePreview
+    src={`https://api.microlink.io?url=${url}&screenshot&embed=screenshot.url`}
+  />
+)
 
 const renderSpec = ({ id, description }) => (
   <ListSpectItem key={id}>
@@ -65,21 +80,11 @@ export default props => {
   return (
     <Aside>
       <Button large>Apply</Button>
-      <Box title='About'>
+      {props.company && renderWebsitePreview(props.company.url)}
+      <Box title='About Us'>
         <List>{getSpecs(props).map(renderSpec)}</List>
         <ListSocial>{props.company.social.map(renderSocial)}</ListSocial>
       </Box>
-      <Box title='Share this offer'>
-        <Share>
-          <a href='/'>Tell a friend</a>
-          <a href='/'>Tweet this job</a>
-          <a href='/'>Post on LinkedIn</a>
-        </Share>
-      </Box>
-      <Box
-        title='Tip: Application Emails'
-        text="We've noticed that people who include a brief description of themselves as well as their resume achieve better results than those who send a longer email when applying."
-      />
     </Aside>
   )
 }
