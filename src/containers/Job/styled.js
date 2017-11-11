@@ -21,6 +21,7 @@ export const Content = styled.article`
   background-color: white;
   box-sizing: border-box;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  max-width: 592px;
 
   ${media.tablet`
     margin-bottom: 1rem;
@@ -51,26 +52,4 @@ export const Subtitle = styled.h4`
   font-size: 0.8rem;
   margin: 1rem 0 0.5rem;
   text-transform: uppercase;
-`
-
-export const Share = styled.nav`
-  & > a {
-    display: block;
-    color: ${({ theme }) => theme.colors.accent};
-  }
-`
-
-export const Aside = styled.aside`
-  margin-left: 1rem;
-  min-width: 18rem;
-  width: 18rem;
-
-  & > *:not(:last-child) {
-    margin-bottom: 1rem;
-  }
-
-  ${media.tablet`
-    width: 100%;
-    margin: 0;
-  `};
 `
