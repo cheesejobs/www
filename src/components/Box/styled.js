@@ -11,8 +11,10 @@ export const BoxNode = styled.div`
 export const Title = styled.h6`
   padding: 0.8rem 1rem;
   border-bottom: solid 1px ${({ theme }) => theme.colors.divider};
-  font-size: 1rem;
   font-weight: 400;
+  font-size: 0.8rem;
+  margin: 1rem 0 0.5rem;
+  text-transform: uppercase;
 `
 
 export const Text = styled.div`

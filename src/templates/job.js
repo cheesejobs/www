@@ -26,6 +26,10 @@ export const pageQuery = graphql`
           name
           url
           size
+          social {
+            id
+            url
+          }
         }
       }
     }

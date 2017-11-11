@@ -195,12 +195,4 @@ specs:
   - id: location
     description: San Francisco, USA
   - id: salary
-    description: 60K - 80K GBP
-  - id: holidayPolitic
-    description: 24 days + sick days + move days
-  - id: remote
-    description: Yes
-  - id: remoteLocation
-    description: Anywhere in the world
-  - id: flexibleHours
-    description: Yes
+    description: 60K to 80K

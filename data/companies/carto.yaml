@@ -1,4 +1,13 @@
 id: carto
 name: Carto
 url: https://carto.com
-size: 3000+
+size: 50 to 100
+social:
+  - id: twitter
+    url: https://twitter.com/carto
+  - id: facebook
+    url: https://facebook.com/CartoDB
+  - id: linkedin
+    url: https://www.linkedin.com/company/carto
+  - id: github
+    url: https://github.com/CartoDB

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Box, Button, List, ListItem, ListText, ListIcon } from 'Components'
 import { Aside, Share } from './styled'
+import styled from 'styled-components'
 
 const mapIcon = {
   salary: 'euro'
@@ -13,18 +14,51 @@ const getSpecs = ({ specs, company }) =>
     { id: 'team_medium', description: `${company.size} Employees` }
   ])
 
-const CustomListItem = ListItem.extend`
+const ListSpectItem = ListItem.extend`
   margin-bottom: 14px;
 `
 const CustomListText = ListText.extend`
   font-size: 14px;
 `
 
+const ListSocial = List.extend`
+  display: flex;
+  justify-content: space-around;
+  padding: 0 1rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+`
+
+const ListSocialItem = ListItem.extend`
+  display: inline;
+  margin-bottom: 0;
+`
+
+const ListSocialIcon = ListIcon.extend`
+  width: 20px;
+  height: 20px;
+`
+
+const ListSocialIconLink = styled.a`
+  color: ${({ theme }) => theme.colors.textSecondary};
+  &:hover {
+    color: ${({ theme }) => theme.colors.accent};
+  }
+`
+
 const renderSpec = ({ id, description }) => (
-  <CustomListItem key={id}>
+  <ListSpectItem key={id}>
     <ListIcon value={getSpecIcon(id)} />
     <CustomListText fontSize={'12px'}>{description}</CustomListText>
-  </CustomListItem>
+  </ListSpectItem>
+)
+
+const renderSocial = ({ id, url }) => (
+  <ListSocialItem key={id}>
+    <ListSocialIconLink target='_blank' href={url}>
+      <ListSocialIcon value={getSpecIcon(id)} />
+    </ListSocialIconLink>
+  </ListSocialItem>
 )
 
 export default props => {
@@ -33,6 +67,7 @@ export default props => {
       <Button large>Apply</Button>
       <Box title='About'>
         <List>{getSpecs(props).map(renderSpec)}</List>
+        <ListSocial>{props.company.social.map(renderSocial)}</ListSocial>
       </Box>
       <Box title='Share this offer'>
         <Share>
