@@ -4,6 +4,7 @@ import React from 'react'
 import { Box, Button, List, ListItem, ListText, ListIcon } from 'Components'
 import { Aside } from './styled'
 import styled from 'styled-components'
+import Sticky from 'react-stickynode'
 
 const mapIcon = {
   salary: 'euro'
@@ -78,13 +79,15 @@ const renderSocial = ({ id, url }) => (
 
 export default props => {
   return (
-    <Aside>
-      <Button large>Apply</Button>
-      {props.company && renderWebsitePreview(props.company.url)}
-      <Box title='About Us'>
-        <List>{getSpecs(props).map(renderSpec)}</List>
-        <ListSocial>{props.company.social.map(renderSocial)}</ListSocial>
-      </Box>
-    </Aside>
+    <Sticky enabled top={23}>
+      <Aside>
+        <Button large>Apply</Button>
+        {props.company && renderWebsitePreview(props.company.url)}
+        <Box title='About Us'>
+          <List>{getSpecs(props).map(renderSpec)}</List>
+          <ListSocial>{props.company.social.map(renderSocial)}</ListSocial>
+        </Box>
+      </Aside>
+    </Sticky>
   )
 }
