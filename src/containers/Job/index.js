@@ -10,7 +10,6 @@ const Job = ({ data }) => {
     benefits,
     recruitingSteps,
     requirements,
-    specs,
     teamDistribution,
     technologies,
     workMethodology
@@ -20,7 +19,6 @@ const Job = ({ data }) => {
     <Wrapper>
       <Content>
         <Sections.Header {...data} />
-        <Sections.Specs data={specs} />
         <Sections.Requirements data={requirements} />
         <Sections.WorkMethodology data={workMethodology} />
         <Sections.Benefits data={benefits} />
@@ -31,7 +29,7 @@ const Job = ({ data }) => {
         <Sections.TeamDistribution data={teamDistribution} />
       </Content>
 
-      <Aside />
+      <Aside {...data} />
     </Wrapper>
   )
 }
