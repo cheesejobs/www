@@ -113,7 +113,8 @@ exports.modifyWebpackConfig = ({ config, stage }) =>
       alias: {
         Components: path.join(__dirname, '/src/components'),
         Containers: path.join(__dirname, '/src/containers'),
-        Helpers: path.join(__dirname, '/src/helpers')
+        Helpers: path.join(__dirname, '/src/helpers'),
+        Constants: path.join(__dirname, '/src/constants')
       }
     }
   })

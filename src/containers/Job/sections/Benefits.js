@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import media from '../../../helpers/responsive'
-import T from '../../../constants/texts.json'
+import { TEXTS } from 'Constants'
 import { Icon, Tooltip } from 'Components'
 import { Section, Title } from '../styled'
 
@@ -48,7 +48,7 @@ const renderWithTooltip = ({ description, icon, id }) => (
   <UnderlineItem key={id}>
     <Tooltip content={description}>
       <ItemIcon value={icon} />
-      <Text>{T.benefits[id]}</Text>
+      <Text>{TEXTS.benefits[id]}</Text>
     </Tooltip>
   </UnderlineItem>
 )
@@ -56,13 +56,13 @@ const renderWithTooltip = ({ description, icon, id }) => (
 const renderWithoutTooltip = ({ description, icon, id }) => (
   <Item key={id}>
     <ItemIcon value={icon} />
-    <Text>{T.benefits[id]}</Text>
+    <Text>{TEXTS.benefits[id]}</Text>
   </Item>
 )
 
 const Benefits = ({ data }) => (
   <Section>
-    <Title>Benefits</Title>
+    <Title>Company Benefits</Title>
     <List>
       {data.map(
         item =>

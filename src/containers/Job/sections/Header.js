@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import { dateHelper, getCompanyLogo } from 'Helpers'
 import { Icon } from 'Components'
 import { Section } from '../styled'
-import TEXTS from '../../../constants/texts.json'
+import { TEXTS } from 'Constants'
 
 const Back = styled(Link)`
   font-size: 0.8rem;

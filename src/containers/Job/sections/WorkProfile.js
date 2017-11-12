@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import T from '../../../constants/texts.json'
+import { TEXTS } from 'Constants'
 import { AmountBar, List, ListItem, ListText, ListTitle } from 'Components'
 import { Section, Title } from '../styled'
 
@@ -26,11 +26,11 @@ const WorkProfile = ({ data }) => {
 
   return (
     <Section>
-      <Title>Work Profile</Title>
+      <Title>Timing Profile</Title>
       <List>
         {Object.keys(info).map(item => (
           <ListItem key={item}>
-            <ListTitle>{T[item]}</ListTitle>
+            <ListTitle>{TEXTS[item]}</ListTitle>
             <ListText>
               <AmountBar
                 offset={info[item].offset}
