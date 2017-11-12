@@ -1,5 +1,5 @@
 export { default as Benefits } from './Benefits'
-export { default as Equipment } from './Equipment'
+export { default as Culture } from './Culture'
 export { default as Header } from './Header'
 export { default as WorkProfile } from './WorkProfile'
 export { default as Recruiting } from './Recruiting'

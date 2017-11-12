@@ -5,6 +5,16 @@
     "other": ""
   },
 
+  "culture": {
+    "perfomanceEvaluation": "Perfomance Evaluation",
+    "remoteWork": "Remote work",
+    "companyRetreat": "Company Retreat",
+    "teamRetreat": "Team Retreat",
+    "equippedSupplied": "Equipped Supplied",
+    "paidVacation": "Paid Vacation",
+    "paidParentalLeave": "Paid parental leave"
+  },
+
   "benefits": {
     "BikeParking": "Bike parking",
     "ConferenceBudget": "Conference budget",
@@ -33,7 +43,6 @@
   "workMethodology": {
     "dailyBuilds" : "Do you make daily builds?",
     "codeReview" : "Does all code go through code review?",
-    "codeInInterview" : "Do new candidates write code during their interview?",
     "commitFirstDay" : "Do new employees commit code the first day?",
     "bestTools" : "Do you use the best tools money can buy?",
     "qualityAssurance" : "Do you do quality assurance?",

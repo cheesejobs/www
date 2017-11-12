@@ -5,7 +5,6 @@ import Aside from './aside'
 
 const Job = ({ data }) => {
   const {
-    equipment,
     workProfile,
     benefits,
     recruitingSteps,
@@ -20,12 +19,12 @@ const Job = ({ data }) => {
       <Content>
         <Sections.Header {...data} />
         <Sections.Requirements data={requirements} />
+        <Sections.Culture {...data} />
         <Sections.WorkMethodology data={workMethodology} />
         <Sections.Benefits data={benefits} />
         <Sections.WorkProfile data={workProfile} />
         <Sections.Recruiting steps={recruitingSteps} />
         <Sections.Technologies data={technologies} />
-        <Sections.Equipment {...equipment} />
         <Sections.TeamDistribution data={teamDistribution} />
       </Content>
 
