@@ -1,10 +1,9 @@
-/* global URL */
-
 import React from 'react'
 import { Box, Button, List, ListItem, ListText, ListIcon } from 'Components'
 import { Aside } from './styled'
 import styled from 'styled-components'
 import Sticky from 'react-stickynode'
+import { getUrlDomain } from 'Helpers'
 
 const mapIcon = {
   salary: 'euro'
@@ -18,7 +17,7 @@ const getSpecs = ({ specs, company }) =>
     { id: 'team_medium', description: `${company.size} Employees` }
   ]
     .concat(specs)
-    .concat([{ id: 'earth', description: `${new URL(company.url).hostname}` }])
+    .concat([{ id: 'earth', description: getUrlDomain(company.url) }])
 
 const ListSpectItem = ListItem.extend`
   margin-bottom: 14px;
