@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Button, List, ListItem, ListText, ListIcon } from 'Components'
+import { Box, Button, List, ListItem, ListText, ListIcon, Link } from 'Components'
 import { Aside } from './styled'
 import styled from 'styled-components'
 import Sticky from 'react-stickynode'
@@ -9,6 +9,10 @@ const mapIcon = {
   salary: 'euro'
 }
 
+const renderCompanyUrl = ({url}) => (
+  <Link external to={url} style='secondary'>{getUrlDomain(url)}</Link>
+)
+
 const getSpecIcon = id => mapIcon[id] || id
 
 const getSpecs = ({ specs, company }) =>
@@ -17,7 +21,7 @@ const getSpecs = ({ specs, company }) =>
     { id: 'team_medium', description: `${company.size} Employees` }
   ]
     .concat(specs)
-    .concat([{ id: 'earth', description: getUrlDomain(company.url) }])
+    .concat([{ id: 'earth', description: renderCompanyUrl(company) }])
 
 const ListSpectItem = ListItem.extend`
   margin-bottom: 14px;
