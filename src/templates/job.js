@@ -48,14 +48,9 @@ export const pageQuery = graphql`
             looking
             other
           }
-          equipment {
-            computer
-            monitors
-            operating_system {
-              apple
-              windows
-              linux
-            }
+          culture {
+            id
+            value
           }
           title
           path

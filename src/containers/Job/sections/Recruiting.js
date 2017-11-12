@@ -5,7 +5,7 @@ import { Section, Title } from '../styled'
 
 const Recruiting = ({ steps }) => (
   <Section>
-    <Title>Hiring</Title>
+    <Title>Hiring Process</Title>
     {steps.map(step => <Step key={step.title} {...step} />)}
   </Section>
 )

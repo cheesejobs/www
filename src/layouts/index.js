@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import React from 'react'
 
-import theme from '../constants/theme'
+import { THEME } from 'Constants'
 import { Layout } from '../components'
 import '../styles/main.scss'
 
@@ -40,7 +40,7 @@ const TemplateWrapper = ({ children, data, ...props }) => {
         ]}
       />
 
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={THEME}>
         <Layout>{children({ ...props })}</Layout>
       </ThemeProvider>
     </div>

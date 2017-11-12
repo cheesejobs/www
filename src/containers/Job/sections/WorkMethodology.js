@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
-import T from '../../../constants/texts.json'
+import { TEXTS } from 'Constants'
 import { Icon, List, ListItem, ListText, ListTitle } from 'Components'
 import { Section, Title } from '../styled'
 
@@ -26,7 +26,7 @@ const WorkMethodology = ({ data }) => (
     <List>
       {data.map(({ value, description, id }) => (
         <ListItem key={id}>
-          <ListTitle>{T.workMethodology[id]}</ListTitle>
+          <ListTitle>{TEXTS.workMethodology[id]}</ListTitle>
           <ListTextLeft>
             {value ? <CustomIcon value='check' /> : <CustomIcon value='x' />}
           </ListTextLeft>
