@@ -19,10 +19,6 @@ const IconNode = styled.span`
     width: 100%;
     height: 100%;
   }
-
-  &:not(:last-child) {
-    margin-right: 0.5rem;
-  }
 `
 
 const Icon = ({ active, value, ...other }) => (
