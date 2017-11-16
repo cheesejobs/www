@@ -1,9 +1,7 @@
-/* global URL */
-
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { dateHelper } from 'Helpers'
+import { dateHelper, getCompanyLogo } from 'Helpers'
 
 import {
   About,
@@ -15,12 +13,6 @@ import {
   Position,
   PublishedDate
 } from './styled'
-
-const FALLBACK_LOGO = 'fallback.gif'
-const getLogoUrl = company => `${new URL(company.url).hostname}.png`
-const isClientSide = typeof window !== `undefined`
-const getCompanyLogo = company =>
-  `/img/logo/${isClientSide ? getLogoUrl(company) : FALLBACK_LOGO}`
 
 const JobItem = props => {
   const { date, company, path, specs, title } = props

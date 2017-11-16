@@ -111,7 +111,7 @@ requirements:
       application.
     - Great oral and written communication in English.
 
-  - name: nices
+  - name: nice to have
     content:
     - Experience with message brokers like RabbitMQ.
     - Experience with Cheerio or any DOM parsing library.
@@ -138,8 +138,6 @@ workMethodology:
   - id: dailyBuilds
     value: true
   - id: codeReview
-    value: true
-  - id: codeInInterview
     value: true
   - id: commitFirstDay
     value: false
@@ -183,24 +181,24 @@ workProfile:
   documentWriting: 5
   meetings: 15
 
-equipment:
-  computer: Laptop
-  monitors: 27"
-  operating_system:
-    apple: true
-    windows: false
-    linux: true
+culture:
+  - id: perfomanceEvaluation
+    value: every 6 months
+  - id: remoteWork
+    value: flexible
+  - id: companyRetreat
+    value: yearly
+  - id: teamRetreat
+    value: every 3 months
+  - id: equippedSupplied
+    value: every 3 months
+  - id: paidVacation
+    value: unlimited
+  - id: paidParentalLeave
+    value: 3 months fully paid
 
 specs:
   - id: location
     description: San Francisco, USA
   - id: salary
-    description: 60K - 80K GBP
-  - id: holidayPolitic
-    description: 24 days + sick days + move days
-  - id: remote
-    description: Yes
-  - id: remoteLocation
-    description: Anywhere in the world
-  - id: flexibleHours
-    description: Yes
+    description: 60K to 80K

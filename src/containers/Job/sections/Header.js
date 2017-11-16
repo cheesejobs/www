@@ -2,10 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import { dateHelper } from 'Helpers'
+import { dateHelper, getCompanyLogo } from 'Helpers'
 import { Icon } from 'Components'
 import { Section } from '../styled'
-import TEXTS from '../../../constants/texts.json'
+import { TEXTS } from 'Constants'
 
 const Back = styled(Link)`
   font-size: 0.8rem;
@@ -49,7 +49,18 @@ const Company = styled.div`
   }
 `
 
-const Title = styled.header``
+const CompanyLogo = styled.img`
+  margin-bottom: 1rem;
+  height: 100%;
+  width: 80px;
+`
+
+const Title = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2.5rem 0;
+`
 
 const DescriptionTitle = styled.h3`
   font-size: 1rem;
@@ -80,10 +91,14 @@ const Header = ({ company, date, title, description, ...props }) => (
     </Top>
 
     <Title>
-      <Position>{title}</Position>
-      <Company>
-        <Link to={company.url}>at {company.name}</Link>
-      </Company>
+      <CompanyLogo src={getCompanyLogo(company)} />
+
+      <div style={{ textAlign: 'center' }}>
+        <Position>{title}</Position>
+        <Company>
+          <Link to={company.url}>at {company.name}</Link>
+        </Company>
+      </div>
     </Title>
 
     {Object.keys(description).map(title =>

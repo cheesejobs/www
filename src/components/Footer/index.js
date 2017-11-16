@@ -1,6 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import { Link } from 'Components'
 
 const Footer = styled.footer`
   padding: 1.2rem 1rem;
@@ -9,21 +9,14 @@ const Footer = styled.footer`
   text-align: center;
 `
 
-const FooterLink = styled(Link)`
-  color: ${({ theme }) => theme.colors.accent};
-  &:hover {
-    color: ${({ theme }) => theme.colors.primary};
-  }
-`
-
 export default () => (
   <Footer>
-    <FooterLink to='/about'>About</FooterLink>
+    <Link to='/about'>About</Link>
     <span> / </span>
-    <FooterLink target='_blank' to='https://twitter.com/nosuitjobs'>
+    <Link external to='https://twitter.com/nosuitjobs'>
       Twitter
-    </FooterLink>
+    </Link>
     <span> / </span>
-    <FooterLink to='mailto:hello@nosuitjobs.com'>Contact</FooterLink>
+    <Link to='mailto:hello@nosuitjobs.com'>Contact</Link>
   </Footer>
 )

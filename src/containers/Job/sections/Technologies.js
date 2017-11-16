@@ -60,7 +60,7 @@ const Name = styled.span`
 
 const Technologies = ({ data }) => (
   <Section>
-    <Title>Technologies</Title>
+    <Title>Technology Stack</Title>
     <TechList>
       {data.map(name => (
         <TechItem key={name}>

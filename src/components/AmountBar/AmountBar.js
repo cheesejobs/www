@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Amount, BackgroundBar, Bars, ColorBar, Wrapper } from './styled'
-import theme from '../../constants/theme'
+import { THEME } from 'Constants'
 
 const AmountBar = ({ amount, color, offset, showAmount }) => (
   <Wrapper>
@@ -27,7 +27,7 @@ AmountBar.propTypes = {
 
 AmountBar.defaultProps = {
   amount: 75,
-  color: theme.colors.accent,
+  color: THEME.colors.accent,
   offset: 0
 }
 

@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import media from '../../../helpers/responsive'
-import T from '../../../constants/texts.json'
+import { TEXTS } from 'Constants'
 import { Section, Title } from '../styled'
 
 const People = styled.p`
@@ -65,7 +65,7 @@ const TeamDistribution = ({ data }) => (
       {data.map(({ id, value }) => (
         <Team key={id}>
           <People>{value}</People>
-          <Name>{T[id]}</Name>
+          <Name>{TEXTS[id]}</Name>
         </Team>
       ))}
     </TeamList>

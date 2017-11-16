@@ -1,4 +1,13 @@
 id: facebook
 name: Facebook
 url: https://facebook.com
-size: 3000+
+founded: 2011
+size: 300+
+social:
+  - id: twitter
+    url: https://twitter.com/carto
+  - id: facebook
+    url: https://facebook.com/CartoDB
+  - id: linkedin
+    url: https://www.linkedin.com/company/carto
+  - id: https://github.com/CartoDB
