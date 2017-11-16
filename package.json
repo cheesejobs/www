@@ -27,6 +27,7 @@
     "gatsby-plugin-sharp": "~1.6.20",
     "gatsby-plugin-styled-components": "~2.0.2",
     "gatsby-source-filesystem": "~1.5.8",
+    "gatsby-transformer-remark": "^1.7.20",
     "gatsby-transformer-sharp": "~1.6.13",
     "gatsby-transformer-yaml": "~1.5.11",
     "polished": "~1.9.0",

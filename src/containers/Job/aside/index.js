@@ -1,5 +1,13 @@
 import React from 'react'
-import { Box, Button, List, ListItem, ListText, ListIcon, Link } from 'Components'
+import {
+  Box,
+  Button,
+  List,
+  ListItem,
+  ListText,
+  ListIcon,
+  Link
+} from 'Components'
 import { Aside } from './styled'
 import styled from 'styled-components'
 import Sticky from 'react-stickynode'
@@ -9,8 +17,10 @@ const mapIcon = {
   salary: 'euro'
 }
 
-const renderCompanyUrl = ({url}) => (
-  <Link external to={url} style='secondary'>{getUrlDomain(url)}</Link>
+const renderCompanyUrl = ({ url }) => (
+  <Link external to={url} style='secondary'>
+    {getUrlDomain(url)}
+  </Link>
 )
 
 const getSpecIcon = id => mapIcon[id] || id

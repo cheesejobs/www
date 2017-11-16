@@ -5,6 +5,20 @@ const path = require('path')
 const fetchCompaniesLogos = require('./server/fetch-companies-logos')
 const jobsTemplate = path.resolve('./src/templates/jobs.js')
 const jobTemplate = path.resolve('./src/templates/job.js')
+const pageTemplate = path.resolve(`./src/templates/page.js`)
+const { createFilePath } = require(`gatsby-source-filesystem`)
+
+exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
+  const { createNodeField } = boundActionCreators
+  if (node.internal.type === `MarkdownRemark`) {
+    const slug = createFilePath({ node, getNode, basePath: `pages` })
+    createNodeField({
+      node,
+      name: `slug`,
+      value: slug
+    })
+  }
+}
 
 exports.createPages = async ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators
@@ -31,6 +45,15 @@ exports.createPages = async ({ graphql, boundActionCreators }) => {
                 }
               }
             }
+            allMarkdownRemark {
+              edges {
+                node {
+                  fields {
+                    slug
+                  }
+                }
+              }
+            }
           }
         `).then(result => {
           if (!result.errors) return result
@@ -42,6 +65,7 @@ exports.createPages = async ({ graphql, boundActionCreators }) => {
 
   const result = await graphqlPromise()
   const jobs = result.data.allJobsYaml.edges.map(item => item.node)
+  const markdowns = result.data.allMarkdownRemark.edges.map(item => item.node)
 
   const teams = jobs.reduce((acc, job) => {
     if (!acc.includes(job.team)) acc.push(job.team)
@@ -102,6 +126,17 @@ exports.createPages = async ({ graphql, boundActionCreators }) => {
       context: {
         path: teamPath,
         team
+      }
+    })
+  })
+
+  // markdown pages
+  markdowns.map(({ fields }) => {
+    createPage({
+      path: fields.slug,
+      component: pageTemplate,
+      context: {
+        slug: fields.slug
       }
     })
   })

@@ -13,7 +13,9 @@ export default () => (
   <Footer>
     <Link to='/about'>About</Link>
     <span> / </span>
-    <Link external to='https://twitter.com/nosuitjobs'>Twitter</Link>
+    <Link external to='https://twitter.com/nosuitjobs'>
+      Twitter
+    </Link>
     <span> / </span>
     <Link to='mailto:hello@nosuitjobs.com'>Contact</Link>
   </Footer>

@@ -7,6 +7,7 @@ export const HeaderNode = styled.header`
   min-height: 6rem;
   display: flex;
   align-items: center;
+  margin-bottom: 1rem;
 
   ${media.phone`
     padding: 2rem 0;
@@ -31,7 +32,7 @@ export const Logo = styled.img`
   height: 45px;
   position: absolute;
   margin-left: -64px;
-  margin-top: 3px;
+  margin-top: 15px;
 `
 
 export const Nav = styled.nav`
@@ -59,8 +60,7 @@ export const Name = styled.h1`
   font-size: 2rem;
 `
 
-export const Description = styled.h1`
+export const Description = styled.h4`
   color: ${({ theme }) => theme.colors.primary};
   font-size: 12px;
-  padding-top: 0.5rem;
 `
