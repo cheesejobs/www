@@ -5,6 +5,7 @@ const path = require('path')
 const fetchCompaniesLogos = require('./server/fetch-companies-logos')
 const jobsTemplate = path.resolve('./src/templates/jobs.js')
 const jobTemplate = path.resolve('./src/templates/job.js')
+const pageTemplate = path.resolve(`./src/templates/page.js`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
@@ -133,7 +134,7 @@ exports.createPages = async ({ graphql, boundActionCreators }) => {
   markdowns.map(({ fields }) => {
     createPage({
       path: fields.slug,
-      component: path.resolve(`./src/templates/page.js`),
+      component: pageTemplate,
       context: {
         slug: fields.slug
       }
